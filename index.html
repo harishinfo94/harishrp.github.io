@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Harish Ramdass Prabakaran — Reliability & Automation Engineering Leader</title>
+<meta name="description" content="Senior Manager, Reliability & Automation Engineering. Architect of CSL's Global Reliability Engineering Standard. Driving AI-powered, predictive, GMP-compliant reliability programs across global biopharmaceutical operations." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --bg: #0a0e17;
+  --bg-2: #0f1422;
+  --bg-3: #141b2d;
+  --surface: rgba(255, 255, 255, 0.025);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text: #e8eef5;
+  --text-dim: #8b95a7;
+  --text-faint: #5a6478;
+  --cyan: #00d4ff;
+  --cyan-soft: #4ae3ff;
+  --copper: #ff8347;
+  --amber: #ffb13a;
+  --phosphor: #b4ff5c;
+  --gradient-1: linear-gradient(135deg, #00d4ff 0%, #4ae3ff 50%, #b4ff5c 100%);
+  --gradient-2: linear-gradient(135deg, #ff8347 0%, #ffb13a 100%);
+  --gradient-mesh: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(0, 212, 255, 0.18), transparent 60%),
+                   radial-gradient(ellipse 70% 50% at 80% 30%, rgba(255, 131, 71, 0.12), transparent 60%),
+                   radial-gradient(ellipse 60% 60% at 50% 90%, rgba(180, 255, 92, 0.08), transparent 60%);
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated gradient mesh background */
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  background: var(--gradient-mesh);
+  z-index: -2;
+  animation: meshDrift 24s ease-in-out infinite alternate;
+}
+@keyframes meshDrift {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-2%, 1%) scale(1.05); }
+  100% { transform: translate(2%, -1%) scale(1); }
+}
+
+/* Noise overlay */
+.bg-noise {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' /%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.7 0 0 0 0 0.85 0 0 0 0.13 0' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+}
+
+/* Dot grid */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 90%);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* === NAV === */
+nav.top {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 18px 0;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(10, 14, 23, 0.6);
+  border-bottom: 1px solid var(--border);
+}
+nav.top .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 36px; height: 36px;
+  background: var(--gradient-1);
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  letter-spacing: -0.04em;
+}
+nav.top ul {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+nav.top ul a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+nav.top ul a:hover { color: var(--text); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.btn:hover {
+  background: var(--surface-hover);
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-1px);
+}
+.btn-primary {
+  background: var(--gradient-1);
+  color: var(--bg);
+  border: 1px solid transparent;
+  font-weight: 600;
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.2), 0 8px 32px rgba(0, 212, 255, 0.18);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.4), 0 12px 40px rgba(0, 212, 255, 0.32);
+}
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 120px 0 80px;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  padding: 7px 14px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(0, 212, 255, 0.06);
+  margin-bottom: 32px;
+  width: fit-content;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 7px; height: 7px;
+  background: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--cyan);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.3); }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 28px;
+  font-variation-settings: "opsz" 96;
+}
+.hero h1 .accent {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 600;
+  font-variation-settings: "opsz" 96;
+}
+.hero h1 .copper {
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.hero-sub {
+  font-size: clamp(16px, 1.6vw, 20px);
+  color: var(--text-dim);
+  max-width: 720px;
+  line-height: 1.55;
+  margin-bottom: 40px;
+}
+.hero-sub strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 40px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.hero-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-meta .dot {
+  width: 4px; height: 4px;
+  background: var(--text-faint);
+  border-radius: 50%;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Hero stat strip */
+.hero-stats {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.hero-stat {
+  padding: 28px 24px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat .num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 38px;
+  letter-spacing: -0.03em;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.hero-stat:nth-child(even) .num {
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-stat .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* === SECTION HEADERS === */
+section {
+  padding: 120px 0;
+  position: relative;
+}
+.sec-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sec-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--cyan);
+}
+.sec-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  max-width: 900px;
+  font-variation-settings: "opsz" 64;
+}
+.sec-title .italic {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text-dim);
+}
+.sec-intro {
+  font-size: 18px;
+  color: var(--text-dim);
+  max-width: 720px;
+  margin-bottom: 64px;
+  line-height: 1.6;
+}
+
+/* === MARQUEE === */
+.marquee {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--bg-2);
+  position: relative;
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 56px;
+  animation: scroll 40s linear infinite;
+}
+.marquee-item {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 56px;
+}
+.marquee-item::after {
+  content: '◆';
+  color: var(--cyan);
+  font-size: 12px;
+}
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* === IMPACT METRICS === */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.metric {
+  background: var(--bg);
+  padding: 36px 32px;
+  position: relative;
+  transition: background 0.3s;
+}
+.metric:hover {
+  background: var(--bg-2);
+}
+.metric .num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(48px, 5vw, 72px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 12px;
+  font-variation-settings: "opsz" 72;
+}
+.metric:nth-child(3n+1) .num {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.metric:nth-child(3n+2) .num {
+  background: var(--gradient-2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.metric:nth-child(3n+3) .num {
+  color: var(--phosphor);
+}
+.metric .lbl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+}
+.metric p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+/* === TRIFECTA === */
+.trifecta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.trifecta-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 32px;
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.trifecta-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-4px);
+  background: var(--surface-hover);
+}
+.trifecta-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 80% at 50% 0%, var(--card-glow), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+}
+.trifecta-card:hover::before { opacity: 0.6; }
+.trifecta-card.cyan { --card-glow: rgba(0, 212, 255, 0.12); }
+.trifecta-card.copper { --card-glow: rgba(255, 131, 71, 0.12); }
+.trifecta-card.phosphor { --card-glow: rgba(180, 255, 92, 0.1); }
+
+.trifecta-num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  letter-spacing: 0.16em;
+  margin-bottom: 16px;
+}
+.trifecta-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+.trifecta-card.cyan h3 { color: var(--cyan); }
+.trifecta-card.copper h3 { color: var(--copper); }
+.trifecta-card.phosphor h3 { color: var(--phosphor); }
+
+.trifecta-role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.trifecta-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.trifecta-card ul li {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  position: relative;
+  padding-left: 16px;
+}
+.trifecta-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.trifecta-card.cyan ul li::before { background: var(--cyan); }
+.trifecta-card.copper ul li::before { background: var(--copper); }
+.trifecta-card.phosphor ul li::before { background: var(--phosphor); }
+
+/* === TIMELINE === */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--cyan), var(--copper) 50%, var(--phosphor));
+  opacity: 0.4;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+.tl-item::before {
+  content: '';
+  position: absolute;
+  left: -34px;
+  top: 8px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--cyan);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.5);
+}
+.tl-item:nth-child(2)::before { border-color: var(--copper); box-shadow: 0 0 16px rgba(255, 131, 71, 0.5); }
+.tl-item:nth-child(3)::before { border-color: var(--phosphor); box-shadow: 0 0 16px rgba(180, 255, 92, 0.4); }
+.tl-item:nth-child(4)::before { border-color: var(--amber); box-shadow: 0 0 16px rgba(255, 177, 58, 0.4); }
+.tl-item:nth-child(5)::before { border-color: var(--cyan-soft); box-shadow: 0 0 16px rgba(74, 227, 255, 0.4); }
+
+.tl-date {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.tl-item h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.tl-company {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+}
+.tl-desc {
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 760px;
+}
+
+/* === INITIATIVES === */
+.initiatives {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.init-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  background: var(--surface);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.init-card:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+  transform: translateY(-3px);
+}
+.init-icon {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 18px;
+  display: inline-block;
+  padding: 5px 11px;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 6px;
+  background: rgba(0, 212, 255, 0.05);
+}
+.init-card:nth-child(2) .init-icon { color: var(--copper); border-color: rgba(255, 131, 71, 0.25); background: rgba(255, 131, 71, 0.05); }
+.init-card:nth-child(3) .init-icon { color: var(--phosphor); border-color: rgba(180, 255, 92, 0.25); background: rgba(180, 255, 92, 0.05); }
+.init-card:nth-child(4) .init-icon { color: var(--amber); border-color: rgba(255, 177, 58, 0.25); background: rgba(255, 177, 58, 0.05); }
+.init-card:nth-child(5) .init-icon { color: var(--cyan-soft); border-color: rgba(74, 227, 255, 0.25); background: rgba(74, 227, 255, 0.05); }
+.init-card:nth-child(6) .init-icon { color: var(--copper); border-color: rgba(255, 131, 71, 0.25); background: rgba(255, 131, 71, 0.05); }
+
+.init-card h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.init-card p {
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* === SKILLS === */
+.skills-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px 80px;
+}
+.skill {
+  margin-bottom: 8px;
+}
+.skill-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+.skill-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+.skill-pct {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--cyan);
+}
+.skill-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+.skill-bar-fill {
+  height: 100%;
+  background: var(--gradient-1);
+  border-radius: 999px;
+  width: 0;
+  transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}
+.skill:nth-child(even) .skill-bar-fill { background: var(--gradient-2); box-shadow: 0 0 12px rgba(255, 131, 71, 0.4); }
+.skill:nth-child(even) .skill-pct { color: var(--copper); }
+
+/* === EDUCATION === */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.edu-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px;
+  background: var(--surface);
+  transition: all 0.3s;
+}
+.edu-card:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-hover);
+}
+.edu-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--cyan);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+.edu-tag.complete {
+  background: rgba(180, 255, 92, 0.1);
+  color: var(--phosphor);
+  border-color: rgba(180, 255, 92, 0.2);
+}
+.edu-card h5 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+.edu-school {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+.edu-date {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+}
+
+.certs {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.cert {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 9px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  color: var(--text-dim);
+  background: var(--surface);
+}
+
+/* === CTA === */
+.cta {
+  text-align: center;
+  padding: 140px 0;
+  position: relative;
+}
+.cta-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(28px, 4vw, 52px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+  font-variation-settings: "opsz" 48;
+}
+.cta-quote .accent {
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* === FOOTER === */
+footer {
+  padding: 40px 0 60px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* === REVEAL ANIMATION === */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal-stagger.in > *      { opacity: 1; transform: translateY(0); }
+.reveal-stagger.in > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.in > *:nth-child(2) { transition-delay: 0.12s; }
+.reveal-stagger.in > *:nth-child(3) { transition-delay: 0.19s; }
+.reveal-stagger.in > *:nth-child(4) { transition-delay: 0.26s; }
+.reveal-stagger.in > *:nth-child(5) { transition-delay: 0.33s; }
+.reveal-stagger.in > *:nth-child(6) { transition-delay: 0.4s; }
+.reveal-stagger.in > *:nth-child(7) { transition-delay: 0.47s; }
+.reveal-stagger.in > *:nth-child(8) { transition-delay: 0.54s; }
+.reveal-stagger.in > *:nth-child(9) { transition-delay: 0.61s; }
+
+/* === RESPONSIVE === */
+@media (max-width: 880px) {
+  .container { padding: 0 22px; }
+  nav.top ul { display: none; }
+  nav.top { padding: 14px 0; }
+  .hero { padding: 100px 0 60px; }
+  section { padding: 80px 0; }
+  .skills-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-stat { border-bottom: 1px solid var(--border); }
+  .hero-stat:nth-child(2n) { border-right: none; }
+  footer .container { flex-direction: column; }
+  .timeline { padding-left: 28px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+
+<!-- NAV -->
+<nav class="top">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-mark">HR</div>
+      <span>Harish<span style="color: var(--text-faint); font-weight: 400;"> · </span>Reliability</span>
+    </div>
+    <ul>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#trifecta">Foundation</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#initiatives">Initiatives</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-eyebrow reveal">
+      <span>Available for Director-level conversations</span>
+    </div>
+    <h1 class="reveal">
+      Engineering the<br>
+      <span class="accent">future of reliability</span><br>
+      across <span class="copper">global biopharma.</span>
+    </h1>
+    <p class="hero-sub reveal">
+      <strong>Senior Manager — Reliability &amp; Automation Engineering</strong> at CSL Behring. Author of the
+      Global Reliability Engineering Standard. 9+ years building data-driven, AI-powered, GMP-compliant
+      reliability programs from the manufacturing floor to the enterprise standard.
+    </p>
+    <div class="hero-meta reveal">
+      <span>📍 Chicago, IL</span>
+      <span class="dot"></span>
+      <span>9+ years experience</span>
+      <span class="dot"></span>
+      <span>Six Sigma · VSME · TPM</span>
+      <span class="dot"></span>
+      <span>MBA — UIUC (in progress)</span>
+    </div>
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary" href="#contact">Get in touch →</a>
+      <a class="btn" href="#experience">Explore the work</a>
+      <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+
+    <!-- HERO STATS STRIP -->
+    <div class="hero-stats reveal-stagger">
+      <div class="hero-stat">
+        <div class="num" data-count="250" data-suffix="+">0</div>
+        <div class="label">Assets · Augury CBM</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num" data-count="30" data-suffix="%">0</div>
+        <div class="label">Repeat-failure cut</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num" data-count="114" data-suffix="">0</div>
+        <div class="label">New PM plans</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num" data-count="1859" data-suffix="">0</div>
+        <div class="label">Components verified</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num" data-count="66" data-suffix="%">0</div>
+        <div class="label">Deviations reduced</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">RCM</span>
+    <span class="marquee-item">FMEA</span>
+    <span class="marquee-item">CBM</span>
+    <span class="marquee-item">Predictive Maintenance</span>
+    <span class="marquee-item">SAP PM</span>
+    <span class="marquee-item">Power BI · Seeq</span>
+    <span class="marquee-item">Augury IoT</span>
+    <span class="marquee-item">Palantir Foundry</span>
+    <span class="marquee-item">Microsoft Copilot RAG</span>
+    <span class="marquee-item">Metasys BAS</span>
+    <span class="marquee-item">GMP / FDA / EMA</span>
+    <span class="marquee-item">Lean Six Sigma</span>
+    <span class="marquee-item">TPM</span>
+    <!-- duplicate for seamless scroll -->
+    <span class="marquee-item">RCM</span>
+    <span class="marquee-item">FMEA</span>
+    <span class="marquee-item">CBM</span>
+    <span class="marquee-item">Predictive Maintenance</span>
+    <span class="marquee-item">SAP PM</span>
+    <span class="marquee-item">Power BI · Seeq</span>
+    <span class="marquee-item">Augury IoT</span>
+    <span class="marquee-item">Palantir Foundry</span>
+    <span class="marquee-item">Microsoft Copilot RAG</span>
+    <span class="marquee-item">Metasys BAS</span>
+    <span class="marquee-item">GMP / FDA / EMA</span>
+    <span class="marquee-item">Lean Six Sigma</span>
+    <span class="marquee-item">TPM</span>
+  </div>
+</div>
+
+<!-- IMPACT METRICS -->
+<section id="impact">
+  <div class="container">
+    <div class="sec-label reveal">01 — Impact at a glance</div>
+    <h2 class="sec-title reveal">Measurable results <span class="italic">across every program I've owned.</span></h2>
+    <p class="sec-intro reveal">
+      Reliability without numbers is just a slogan. Below: the outcomes I've delivered — quantified,
+      audited, and reproducible.
+    </p>
+
+    <div class="metrics-grid reveal-stagger">
+      <div class="metric">
+        <div class="num">250+</div>
+        <div class="lbl">Wireless CBM Assets</div>
+        <p>Augury IoT vibration monitoring deployed across critical rotating assets — site-wide predictive backbone.</p>
+      </div>
+      <div class="metric">
+        <div class="num">30%</div>
+        <div class="lbl">Repeat-failure reduction</div>
+        <p>FMEA + RCA corrective-action programme across critical biopharmaceutical production assets.</p>
+      </div>
+      <div class="metric">
+        <div class="num">66%</div>
+        <div class="lbl">Deviation reduction</div>
+        <p>Out-of-Tolerance: 6.80 → 2.30/day. On-time closures: 45.7% → 57.7%. Zero overdue records.</p>
+      </div>
+      <div class="metric">
+        <div class="num">1,859</div>
+        <div class="lbl">Components verified</div>
+        <p>Pretreatment + Purified Water systems, fully documented across 45 P&amp;IDs in the Utilities Reliability Project.</p>
+      </div>
+      <div class="metric">
+        <div class="num">237</div>
+        <div class="lbl">New SAP equipment #s</div>
+        <p>Created and tagged in CMMS — closing a multi-year asset-coverage gap across utilities.</p>
+      </div>
+      <div class="metric">
+        <div class="num">114</div>
+        <div class="lbl">New PM plans generated</div>
+        <p>Adding previously unmaintained assets to the programme; aligned with RCM + manufacturer recommendations.</p>
+      </div>
+      <div class="metric">
+        <div class="num">20%</div>
+        <div class="lbl">Proactive maintenance shift</div>
+        <p>SAP-PM-driven shift in posture from reactive firefighting to proactive PM/PdM execution.</p>
+      </div>
+      <div class="metric">
+        <div class="num">150%</div>
+        <div class="lbl">Throughput uplift</div>
+        <p>TAFE: flagship model from 4 → 10 units/shift via Lean Six Sigma + TPM. National Award winner.</p>
+      </div>
+      <div class="metric">
+        <div class="num">$16K</div>
+        <div class="lbl">Identified in savings</div>
+        <p>FMEA + why-why analysis on filling-line vial breakages during CSL research engineering tenure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRIFECTA -->
+<section id="trifecta">
+  <div class="container">
+    <div class="sec-label reveal">02 — The trifecta</div>
+    <h2 class="sec-title reveal">A rare cross-functional foundation: <span class="italic">Quality · Production · Reliability.</span></h2>
+    <p class="sec-intro reveal">
+      Most reliability leaders come from one discipline. I've owned all three — and that
+      systems-level perspective is what lets me make decisions others can't see.
+    </p>
+
+    <div class="trifecta">
+      <div class="trifecta-card cyan reveal">
+        <div class="trifecta-num">01 / Quality</div>
+        <h3>Quality.</h3>
+        <div class="trifecta-role">Investigation Owner · CSL Behring · 2021–2022</div>
+        <ul>
+          <li>Led GMP deviation investigations in a cGMP biopharmaceutical environment</li>
+          <li>Full CAPA ownership: scope, root cause, product impact, corrective + preventive actions</li>
+          <li>Reduced Out-of-Tolerance deviations 66% (6.80 → 2.30/workday) — zero overdue records</li>
+          <li>Improved on-time closure rates 45.7% → 57.7%</li>
+          <li>Maintained FDA / EMA audit-ready documentation throughout</li>
+        </ul>
+      </div>
+
+      <div class="trifecta-card copper reveal">
+        <div class="trifecta-num">02 / Production</div>
+        <h3>Production.</h3>
+        <div class="trifecta-role">Manufacturing Engineer · TAFE 2015–2019 · CSL 2020</div>
+        <ul>
+          <li>Led 110-person team across Pre-paint Chassis cells (Cell 1, 2, 3 &amp; 4WD) at TAFE</li>
+          <li>Established work standards; optimised workflows by manufacturing sequence + lead time</li>
+          <li>Generated 150 Kaizens; <strong>National Lean Six Sigma Excellence Award 2017</strong></li>
+          <li>T4 cycle time reduced by 5,700 sec; 4 → 10 units per shift on flagship model</li>
+          <li>CSL intern: FMEA on filling-line bottleneck → $16K savings identified</li>
+        </ul>
+      </div>
+
+      <div class="trifecta-card phosphor reveal">
+        <div class="trifecta-num">03 / Reliability</div>
+        <h3>Reliability.</h3>
+        <div class="trifecta-role">Sr. Manager · Reliability + BAS · CSL 2023–Present</div>
+        <ul>
+          <li>Architected site-wide RCM / CBM / PdM strategy for a regulated biopharma site</li>
+          <li>Authored CSL Global Reliability Engineering Standard — adopted at all global sites</li>
+          <li>Deployed Augury IoT vibration monitoring across 250+ assets</li>
+          <li>Built CBM programmes across Fill Finish, Utilities, Bulk Mfg (CIP Skids)</li>
+          <li>Piloting Microsoft Copilot RAG + Palantir Foundry for AI-driven maintenance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience">
+  <div class="container">
+    <div class="sec-label reveal">03 — Career progression</div>
+    <h2 class="sec-title reveal">From the floor to <span class="italic">the global standard.</span></h2>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-date">Nov 2023 — Present</div>
+        <h4>Sr. Manager, Reliability &amp; Automation Engineering (BAS)</h4>
+        <div class="tl-company">CSL Behring · Kankakee, IL</div>
+        <p class="tl-desc">
+          Architected site-wide RCM / CBM / PdM strategy scalable across CSL's global multi-site operations.
+          Authored the CSL Global Reliability Engineering Standard — now the enterprise benchmark.
+          Deployed Augury wireless vibration monitoring across 250+ critical rotating assets. Built CBM programmes
+          for Fill Finish (Capper, Isolator, Tunnel — Optima), Utilities (hot-flush, loop utilisation), and Bulk Mfg
+          CIP Skids. Piloting Microsoft Copilot RAG agent and building AI-Powered Maintenance Intelligence on
+          Palantir Foundry for the 16N Fill Finish line. Dual scope: Reliability + BAS Automation (Metasys / Johnson Controls).
+          Technical representative for FDA / EMA inspections.
+        </p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-date">Apr 2022 — Nov 2023</div>
+        <h4>Engineering Business Performance Manager</h4>
+        <div class="tl-company">CSL Behring · Kankakee, IL</div>
+        <p class="tl-desc">
+          Built enterprise Power BI + Seeq dashboards governing CM/PM ratio, downtime, finance, safety, and PM-duration
+          KPIs. Designed the Critical Utilities reliability KPI framework — direct precursor to the Augury / CBM programme.
+          Applied CSL Transformation methodologies (Kaizen, 5-Whys, RCA, Sustainability Plans) to drive durable
+          maintenance improvements across the site. Standardised KPI definitions across engineering functions, cutting
+          reporting cycle time and improving decision quality.
+        </p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-date">Jun 2021 — Apr 2022</div>
+        <h4>Investigation Owner</h4>
+        <div class="tl-company">CSL Behring · Kankakee, IL</div>
+        <p class="tl-desc">
+          Led cross-functional investigations of GMP deviations in a cGMP biopharmaceutical environment. Reduced
+          Out-of-Tolerance deviations from 6.80 → 2.30 per workday and improved on-time closure from 45.7% → 57.7% —
+          while maintaining zero overdue quality records. Determined scope, product impact, root cause, and CAPAs;
+          maintained continuous FDA / EMA audit readiness.
+        </p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-date">May 2020 — Jul 2020</div>
+        <h4>Manufacturing / Research Engineering Intern</h4>
+        <div class="tl-company">CSL Behring · Kankakee, IL</div>
+        <p class="tl-desc">
+          Conducted FMEA analysis to troubleshoot bottleneck processes; identified $16,000 in savings by addressing
+          vial breakages on the filling line. Prepared trend analysis reports using Minitab and Pareto charts; collaborated
+          across Quality, Maintenance, and Manufacturing to remove non-value-added cleaning / re-sterilising activities
+          and eliminate 8 hours of downtime (Master's Thesis applied).
+        </p>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-date">Jul 2015 — Jul 2019</div>
+        <h4>Manufacturing Engineer — Production</h4>
+        <div class="tl-company">Tractors and Farm Equipment Ltd (TAFE) · Madurai, India</div>
+        <p class="tl-desc">
+          Led a team of 110 across Pre-paint Chassis build cells; implemented Lean Six Sigma, TPM, and VSME methodologies
+          to scale flagship model production from 4 to 10 units/shift. Winner of the <strong>National Lean Six Sigma
+          Excellence Award 2017</strong>. Generated 150 Kaizens; drove RCA, ECNs, and process improvements via VSM,
+          process flow analysis, and cost-reduction frameworks. Achieved 80% reduction in brake-pedal uneven issues
+          using Six Sigma (90 → 27 occurrences).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC INITIATIVES -->
+<section id="initiatives" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="sec-label reveal">04 — Signature initiatives</div>
+    <h2 class="sec-title reveal">Where I'm <span class="italic">moving the field forward.</span></h2>
+
+    <div class="initiatives reveal-stagger">
+      <div class="init-card">
+        <span class="init-icon">AI · RAG</span>
+        <h4>Microsoft Copilot RAG Agent</h4>
+        <p>Piloting an AI-powered troubleshooting agent using Retrieval-Augmented Generation. Natural-language queries
+          mine maintenance manuals and equipment history to accelerate diagnostics and reduce MTTR.</p>
+      </div>
+      <div class="init-card">
+        <span class="init-icon">Standards · Global</span>
+        <h4>Global Reliability Engineering Standard</h4>
+        <p>Authored the enterprise-wide framework adopted across all CSL sites — standardising RCM, FMEA, CBM, asset
+          criticality, CMMS governance, and PM/PdM strategy worldwide.</p>
+      </div>
+      <div class="init-card">
+        <span class="init-icon">Palantir · Foundry</span>
+        <h4>AI Maintenance Intelligence</h4>
+        <p>Building an AI-powered maintenance intelligence platform on Palantir Foundry with Process Modelling for
+          the 16N Fill Finish line — predictive insights, digital asset twins, data-driven maintenance.</p>
+      </div>
+      <div class="init-card">
+        <span class="init-icon">IoT · Augury</span>
+        <h4>Site-Wide Wireless Vibration</h4>
+        <p>Deployed Augury IoT vibration monitoring across 250+ assets — continuous real-time predictive maintenance
+          backbone for early degradation detection across the site.</p>
+      </div>
+      <div class="init-card">
+        <span class="init-icon">CBM · Multi-domain</span>
+        <h4>CBM Across 3 Domains</h4>
+        <p>Fill Finish (Capper, Isolator, Tunnel — Optima), Utilities (hot-flush / loop utilisation), Bulk Mfg
+          CIP Skids (18.38 &amp; 21N) and Fractionation (Agitator Current Monitoring).</p>
+      </div>
+      <div class="init-card">
+        <span class="init-icon">BAS · Metasys</span>
+        <h4>Building Automation (Johnson Controls)</h4>
+        <p>Managing the Metasys BAS platform — environmental monitoring for all GxP sites and safety systems
+          (O₂ / LEL monitoring) across the Kankakee site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-label reveal">05 — Technical depth</div>
+    <h2 class="sec-title reveal">Core competencies <span class="italic">— calibrated by years of execution.</span></h2>
+
+    <div class="skills-wrap reveal">
+      <div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">Reliability Strategy (RCM / FMEA / CBM)</span><span class="skill-pct">96%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="96"></div></div></div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">Predictive Maintenance / PdM</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="95"></div></div></div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">Lean Six Sigma / TPM</span><span class="skill-pct">94%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="94"></div></div></div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">GMP / FDA / EMA Compliance</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="92"></div></div></div>
+      </div>
+      <div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">CMMS Optimisation (SAP PM)</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="90"></div></div></div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">Digital Analytics (Power BI / Seeq)</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="88"></div></div></div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">Building Automation (Metasys BAS)</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="82"></div></div></div>
+        <div class="skill"><div class="skill-head"><span class="skill-name">AI / Agentic Tools (Copilot RAG)</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="80"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="sec-label reveal">06 — Education &amp; development</div>
+    <h2 class="sec-title reveal">Always <span class="italic">in motion.</span></h2>
+
+    <div class="edu-grid reveal-stagger">
+      <div class="edu-card">
+        <span class="edu-tag">In Progress</span>
+        <h5>Master of Business Administration (MBA)</h5>
+        <div class="edu-school">University of Illinois Urbana-Champaign (UIUC)</div>
+        <div class="edu-date">Jan 2026 → May 2028</div>
+      </div>
+      <div class="edu-card">
+        <span class="edu-tag">In Progress</span>
+        <h5>Certificate in Agentic AI</h5>
+        <div class="edu-school">16-Week Professional Programme</div>
+        <div class="edu-date">Apr 2026 → Aug 2026</div>
+      </div>
+      <div class="edu-card">
+        <span class="edu-tag complete">Completed</span>
+        <h5>M.S. Industrial Engineering</h5>
+        <div class="edu-school">University of Illinois at Chicago</div>
+        <div class="edu-date">Aug 2019 → May 2021</div>
+      </div>
+      <div class="edu-card">
+        <span class="edu-tag complete">Completed</span>
+        <h5>B.E. Mechanical Engineering</h5>
+        <div class="edu-school">Anna University, India</div>
+        <div class="edu-date">Aug 2011 → May 2015</div>
+      </div>
+    </div>
+
+    <div class="certs reveal">
+      <span class="cert">◆ Six Sigma Green Belt</span>
+      <span class="cert">◆ VSME / VLFM Certified</span>
+      <span class="cert">◆ TPM Level 1 &amp; 2</span>
+      <span class="cert">◆ National LSS Excellence Award · 2017</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <div class="container">
+    <p class="cta-quote reveal">
+      "Engineering reliability is not just my profession <span class="accent">— it is my competitive advantage.</span>"
+    </p>
+    <div class="cta-buttons reveal">
+      <a class="btn btn-primary" href="mailto:harishinfo94@gmail.com">harishinfo94@gmail.com →</a>
+      <a class="btn" href="tel:+13128682085">(312) 868-2085</a>
+      <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div>© 2026 · Harish Ramdass Prabakaran · Chicago, IL</div>
+    <div>Engineered with precision · Hosted on GitHub Pages</div>
+  </div>
+</footer>
+
+<script>
+// === REVEAL ON SCROLL ===
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+
+// === COUNT-UP HERO STATS ===
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+      const easeOut = t => 1 - Math.pow(1 - t, 3);
+      function tick(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const v = Math.floor(easeOut(t) * target);
+        el.textContent = v.toLocaleString() + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString() + suffix;
+      }
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
+
+// === ANIMATE SKILL BARS ===
+const skillIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const fill = entry.target;
+      const v = fill.dataset.fill;
+      requestAnimationFrame(() => fill.style.width = v + '%');
+      skillIO.unobserve(fill);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.skill-bar-fill').forEach(el => skillIO.observe(el));
+</script>
+
+</body>
+</html>
