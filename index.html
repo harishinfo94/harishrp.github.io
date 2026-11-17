@@ -1,1365 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Harish Ramdass Prabakaran — Reliability & Automation Engineering Leader</title>
-<meta name="description" content="Senior Manager, Reliability & Automation Engineering. Architect of CSL's Global Reliability Engineering Standard. Driving AI-powered, predictive, GMP-compliant reliability programs across global biopharmaceutical operations." />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harish Ramdass Prabakaran</title>
+<meta name="description" content="Senior Manager, Reliability and Automation Engineering at CSL Behring. Author of the Global Reliability Engineering Standard.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0a0e17;
-  --bg-2: #0f1422;
-  --bg-3: #141b2d;
-  --surface: rgba(255, 255, 255, 0.025);
-  --surface-hover: rgba(255, 255, 255, 0.05);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
-  --text: #e8eef5;
-  --text-dim: #8b95a7;
-  --text-faint: #5a6478;
-  --cyan: #00d4ff;
-  --cyan-soft: #4ae3ff;
-  --copper: #ff8347;
-  --amber: #ffb13a;
-  --phosphor: #b4ff5c;
-  --gradient-1: linear-gradient(135deg, #00d4ff 0%, #4ae3ff 50%, #b4ff5c 100%);
-  --gradient-2: linear-gradient(135deg, #ff8347 0%, #ffb13a 100%);
-  --gradient-mesh: radial-gradient(ellipse 80% 60% at 20% 20%, rgba(0, 212, 255, 0.18), transparent 60%),
-                   radial-gradient(ellipse 70% 50% at 80% 30%, rgba(255, 131, 71, 0.12), transparent 60%),
-                   radial-gradient(ellipse 60% 60% at 50% 90%, rgba(180, 255, 92, 0.08), transparent 60%);
+/* Layout idea: a condition-monitoring readout in red, black and warm grey. One black instrument panel with a live signal, then quiet left-aligned pages of evidence. */
+:root{
+  color-scheme:light;
+  --paper:#FFFFFF; --sheet:#F3F1EC; --ink:#111111; --muted:#5F6163; --line:#DAD6CC;
+  --panel:#4D5053; --panel-ink:#FFFFFF; --panel-muted:#DDDDDD;
+  --healthy:#FC1921; --alarm:#FC1921; --healthy-deep:#111111; --edu:#8C8F91; --signal:#E6E6E6;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--alarm);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+h1{font-stretch:116%;font-weight:800;font-size:clamp(34px,5.6vw,72px);line-height:1.02;letter-spacing:-.02em;max-width:24ch}
+.tagline{font-family:var(--display);font-stretch:108%;font-weight:700;font-size:clamp(19px,2.2vw,26px);color:#FFFFFF;font-style:italic;margin-top:52px}
+h2{font-stretch:112%;font-weight:750;font-size:clamp(30px,4.4vw,52px);line-height:1.04;letter-spacing:-.015em}
+h3{font-stretch:105%;font-weight:700;font-size:21px;line-height:1.2}
+p{margin:0}
+.lede{font-size:clamp(18px,2vw,21px);max-width:60ch}
+.muted{color:var(--muted)}
+.num{font-family:var(--display);font-stretch:110%;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 
-  --font-display: 'Bricolage Grotesque', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-}
+/* nav */
+.nav{position:sticky;top:0;z-index:5;background:var(--panel);color:var(--panel-ink);border-bottom:1px solid #333333}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:56px}
+.brand{font-family:var(--display);font-stretch:112%;font-weight:750;text-decoration:none;font-size:16px;white-space:nowrap}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;overflow-x:auto}
+.nav a{text-decoration:none;font-size:15px;color:var(--panel-muted)}
+.nav a:hover{color:var(--panel-ink)}
+@media (max-width:760px){.nav ul{display:none}}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* hero panel */
+.hero{background:var(--panel);color:var(--panel-ink);padding:56px 0 0}
+.hero .lede{color:var(--panel-muted);margin-top:22px}
+.hero .lede b{color:var(--panel-ink);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;font:600 16px var(--body);text-decoration:none;padding:12px 20px;border-radius:999px;border:2px solid var(--healthy);color:var(--panel-ink)}
+.btn.solid{background:var(--healthy);color:#FFFFFF;border-color:var(--healthy)}
+.btn:hover{border-color:#FFFFFF}
+.scope{margin-top:14px;position:relative}
+.scope canvas{display:block;width:100%;height:220px}
+.scope .key{display:flex;flex-wrap:wrap;gap:6px 22px;font-size:14px;color:var(--panel-muted);padding:10px 0 0}
+.key i{display:inline-block;width:22px;height:4px;border-radius:2px;vertical-align:middle;margin-right:8px}
+.flag{position:absolute;top:8px;left:0;font-size:14px;font-weight:600;color:#FFFFFF;background:var(--alarm);padding:4px 10px;border-radius:4px;white-space:nowrap;opacity:0;transform:translateX(-50%);transition:opacity .3s}
+.flag.on{opacity:1}
+.readout{display:grid;grid-template-columns:repeat(4,1fr);margin-top:28px;border-top:1px solid #333333}
+.readout div{padding:22px 20px 28px 0}
+.readout div+div{border-left:1px solid #333333;padding-left:20px}
+.readout .num{font-size:clamp(30px,4vw,48px);line-height:1;display:block;color:var(--panel-ink)}
+.readout div>span{font-size:14.5px;color:var(--panel-muted);display:block;margin-top:8px;max-width:22ch}
+@media (max-width:760px){.readout{grid-template-columns:repeat(2,1fr)}.readout div:nth-child(3){border-left:0;padding-left:0}.readout div:nth-child(n+3){border-top:1px solid #333333}}
 
-html { scroll-behavior: smooth; }
+/* sections */
+section{padding:88px 0}
+section .intro{margin-top:18px}
+.results{margin-top:40px;border-top:2px solid var(--ink)}
+.results .r{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:8px 32px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.results .num{font-size:clamp(34px,4.6vw,56px);line-height:1}
+.results strong{font-weight:600;display:block}
+@media (max-width:620px){.results .r{grid-template-columns:1fr}}
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* career */
+.tl{margin-top:40px;background:var(--sheet);border:1px solid var(--line);border-radius:10px;padding:26px 24px 22px}
+.tl-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;padding-bottom:22px}
+.tl-head p{font-family:var(--display);font-stretch:108%;font-weight:700;font-size:22px}
+.tl-head .num{font-size:44px;line-height:1;margin-right:8px;color:var(--healthy)}
+.tl-head span{color:var(--muted);font-size:15.5px}
+.tl-lane{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:end}
+.tl-name{font-size:14.5px;font-weight:600;padding-bottom:14px}
+.tl-track{position:relative;background:repeating-linear-gradient(to right,var(--line) 0 1px,transparent 1px 6.25%)}
+.tl-track em{position:absolute;top:0;font-style:normal;font-size:13.5px;color:var(--muted);white-space:nowrap}
+.tl-work{height:82px}
+.tl-work i{position:absolute;bottom:0;height:52px;background:var(--healthy-deep);border-radius:4px;display:grid;place-items:center;box-shadow:inset -2px 0 0 var(--sheet)}
+.tl-work i b{color:#fff;font-size:15px;font-weight:600;font-style:normal}
+.tl-work i.now{background:var(--alarm);box-shadow:none}
+.tl-work i.now b{color:#FFFFFF}
+.tl-work i.blip{background:#6B6B6B;height:52px}
+.tl-edu{height:58px;margin-top:14px}
+.tl-edu i{position:absolute;top:24px;height:10px;background:var(--edu);border-radius:3px;min-width:5px}
+.tl-edu i.row2{top:40px}
+.tl-axis{display:grid;grid-template-columns:92px 1fr;gap:14px;font-size:12.5px;color:var(--muted);margin-top:8px}
+.tl-axis div{display:grid;grid-template-columns:repeat(8,1fr)}
+.tl-keys{display:grid;grid-template-columns:1.15fr 1fr;gap:10px 40px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.tl-keys ol,.tl-keys ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tl-keys li{font-size:15px;display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:start;line-height:1.35}
+.tl-keys small{color:var(--muted);font-size:13.5px;white-space:nowrap;margin-left:6px}
+.tl-keys ol b{width:24px;height:24px;border-radius:4px;background:var(--healthy-deep);color:#fff;font-size:13.5px;display:grid;place-items:center}
+.tl-keys ol b.nowk{background:var(--alarm);color:#FFFFFF}
+.tl-keys ol b.blipk{background:#6B6B6B}
+.tl-keys ul b{width:24px;height:8px;border-radius:3px;background:var(--edu);margin-top:7px}
+@media (max-width:700px){.tl-lane,.tl-axis{grid-template-columns:1fr;gap:4px}.tl-name{padding-bottom:0}.tl-axis>span{display:none}.tl-keys{grid-template-columns:1fr}.tl-track em .x{display:none}.tl-edu{margin-top:6px}.tl-lane+.tl-lane{margin-top:14px}}
+.roles{margin-top:36px;display:grid;gap:0}
+.role{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:8px 32px;padding:26px 0;border-top:1px solid var(--line)}
+.role .when{font-size:15px;color:var(--muted);font-variant-numeric:tabular-nums}
+.role p{margin-top:8px;max-width:68ch}
+.role .org{color:var(--muted);font-size:15.5px;margin-top:2px}
+@media (max-width:620px){.role{grid-template-columns:1fr}}
 
-/* Animated gradient mesh background */
-.bg-mesh {
-  position: fixed;
-  inset: 0;
-  background: var(--gradient-mesh);
-  z-index: -2;
-  animation: meshDrift 24s ease-in-out infinite alternate;
-}
-@keyframes meshDrift {
-  0%   { transform: translate(0, 0) scale(1); }
-  50%  { transform: translate(-2%, 1%) scale(1.05); }
-  100% { transform: translate(2%, -1%) scale(1); }
-}
+/* TAFE */
+.tafe{background:var(--sheet);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ba{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+@media (max-width:820px){.ba{grid-template-columns:1fr}}
+.ba h3{margin-bottom:4px}
+.bars{margin-top:14px;display:grid;gap:8px}
+.bar{display:grid;grid-template-columns:58px 1fr 40px;gap:10px;align-items:center;font-size:14.5px}
+.bar i{display:block;height:18px;border-radius:0 3px 3px 0;background:#B5B1A8}
+.bar i.after{background:var(--healthy)}
+.bar b{text-align:right;font-variant-numeric:tabular-nums}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-top:2px solid var(--ink)}
+.facts div{padding:18px 16px 0 0}
+.facts .num{font-size:clamp(28px,3.4vw,42px);line-height:1;display:block}
+.facts div>span{font-size:14.5px;color:var(--muted);display:block;margin-top:6px}
+@media (max-width:700px){.facts{grid-template-columns:repeat(2,1fr);row-gap:18px}}
 
-/* Noise overlay */
-.bg-noise {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.4;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' /%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.7 0 0 0 0 0.85 0 0 0 0.13 0' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
-}
+/* thesis */
+.thesis{background:var(--panel);color:var(--panel-ink)}
+.thesis .grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+@media (max-width:820px){.thesis .grid{grid-template-columns:1fr}}
+.thesis h2{font-size:clamp(26px,3.4vw,40px)}
+.thesis p{color:var(--panel-muted);margin-top:16px;max-width:60ch}
+.thesis .meta{font-size:15px;color:var(--panel-muted);margin-bottom:14px}
+.dmaic{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid #333333}
+.dmaic li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid #333333;font-size:15.5px;color:var(--panel-muted)}
+.dmaic b{font-family:var(--display);font-weight:800;font-size:22px;color:#FFFFFF;line-height:1.1}
+.dmaic strong{color:var(--panel-ink);font-weight:600}
 
-/* Dot grid */
-.bg-grid {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 90%);
-}
+/* work */
+.work{margin-top:40px;display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;border-top:2px solid var(--ink)}
+@media (max-width:760px){.work{grid-template-columns:1fr}}
+.work article{padding:24px 0;border-bottom:1px solid var(--line)}
+.work p{margin-top:8px;color:var(--muted)}
 
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
+/* skills + education */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:40px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+.group{padding:16px 0;border-top:1px solid var(--line)}
+.group h3{font-size:17px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:14.5px;background:var(--sheet);border:1px solid var(--line);border-radius:4px;padding:3px 9px}
+.edu{list-style:none;margin:0;padding:0}
+.edu li{padding:16px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:4px 16px}
+.edu small{font-size:14.5px;color:var(--muted);grid-column:1/-1}
+.state{font-size:13.5px;font-weight:600;padding:2px 9px;border-radius:999px;align-self:start;white-space:nowrap}
+.state.done{background:#EFEDE6;color:#111111}
+.state.going{background:#FDE1E2;color:#A30D13}
 
-/* === NAV === */
-nav.top {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 18px 0;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  background: rgba(10, 14, 23, 0.6);
-  border-bottom: 1px solid var(--border);
-}
-nav.top .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.logo-mark {
-  width: 36px; height: 36px;
-  background: var(--gradient-1);
-  border-radius: 9px;
-  display: grid;
-  place-items: center;
-  color: var(--bg);
-  font-size: 13px;
-  font-weight: 800;
-  font-family: var(--font-mono);
-  letter-spacing: -0.04em;
-}
-nav.top ul {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-  font-size: 14px;
-  font-weight: 500;
-}
-nav.top ul a {
-  color: var(--text-dim);
-  text-decoration: none;
-  transition: color 0.2s;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.02em;
-}
-nav.top ul a:hover { color: var(--text); }
+/* reliability meets AI */
+.ai{background:var(--sheet);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.projs{margin-top:40px;border-top:2px solid var(--ink)}
+.proj{display:grid;grid-template-columns:320px 1fr;gap:36px;padding:30px 0;border-bottom:1px solid var(--line);align-items:center}
+.viz{background:var(--panel);border-radius:12px;overflow:hidden}
+.viz svg{display:block;width:100%;height:auto}
+.phead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.status{display:inline-block;font-size:13.5px;font-weight:600;padding:2px 9px;border-radius:999px}
+.status.live{background:#111111;color:#FFFFFF}
+.status.pilot{background:#FDE1E2;color:#A30D13}
+.status.build{background:#EFEDE6;color:#111111}
+.steps3{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.steps3 li{position:relative;padding-top:52px}
+.steps3 li:not(:last-child)::after{content:"";position:absolute;top:19px;left:50px;right:-16px;height:2px;background:var(--line)}
+.ic{position:absolute;top:0;left:0;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#FFFFFF;border:2px solid var(--ink);color:var(--ink)}
+.ic.ai-ic{background:var(--healthy);border-color:var(--healthy);color:#FFFFFF}
+.steps3 small{display:block;font-size:13.5px;color:var(--muted)}
+.steps3 p{font-size:15.5px;line-height:1.45;margin-top:2px}
+@media (max-width:900px){.proj{grid-template-columns:1fr;gap:20px}.viz{max-width:420px}}
+@media (max-width:620px){.steps3{grid-template-columns:1fr;gap:16px}.steps3 li{padding:0 0 0 54px;min-height:40px}.steps3 li:not(:last-child)::after{top:44px;left:19px;right:auto;width:2px;height:calc(100% - 28px)}}
+.rule{margin-top:28px;font-family:var(--display);font-stretch:108%;font-weight:700;font-size:clamp(20px,2.4vw,28px);max-width:30ch}
+/* skill levels */
+.level{padding:12px 0;border-top:1px solid var(--line)}
+.level div{display:flex;justify-content:space-between;gap:12px;font-size:15.5px}
+.level b{font-variant-numeric:tabular-nums}
+.meter{height:8px;background:var(--line);border-radius:4px;margin-top:8px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--healthy);border-radius:4px;transform-origin:left;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.meter.wait i{transform:scaleX(0)}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 20px;
-  border-radius: 999px;
-  font-weight: 500;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  border: 1px solid var(--border-strong);
-  background: var(--surface);
-  color: var(--text);
-  cursor: pointer;
-  font-family: var(--font-body);
-}
-.btn:hover {
-  background: var(--surface-hover);
-  border-color: rgba(255,255,255,0.3);
-  transform: translateY(-1px);
-}
-.btn-primary {
-  background: var(--gradient-1);
-  color: var(--bg);
-  border: 1px solid transparent;
-  font-weight: 600;
-  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.2), 0 8px 32px rgba(0, 212, 255, 0.18);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.4), 0 12px 40px rgba(0, 212, 255, 0.32);
-}
-
-/* === HERO === */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  padding: 120px 0 80px;
-}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  padding: 7px 14px;
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  border-radius: 999px;
-  background: rgba(0, 212, 255, 0.06);
-  margin-bottom: 32px;
-  width: fit-content;
-}
-.hero-eyebrow::before {
-  content: '';
-  width: 7px; height: 7px;
-  background: var(--cyan);
-  border-radius: 50%;
-  box-shadow: 0 0 12px var(--cyan);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: 0.5; transform: scale(1.3); }
-}
-
-.hero h1 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(48px, 8vw, 120px);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  margin-bottom: 28px;
-  font-variation-settings: "opsz" 96;
-}
-.hero h1 .accent {
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
-  font-weight: 600;
-  font-variation-settings: "opsz" 96;
-}
-.hero h1 .copper {
-  background: var(--gradient-2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-style: italic;
-  font-weight: 600;
-}
-
-.hero-sub {
-  font-size: clamp(16px, 1.6vw, 20px);
-  color: var(--text-dim);
-  max-width: 720px;
-  line-height: 1.55;
-  margin-bottom: 40px;
-}
-.hero-sub strong {
-  color: var(--text);
-  font-weight: 500;
-}
-
-.hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  align-items: center;
-  margin-bottom: 40px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-dim);
-}
-.hero-meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.hero-meta .dot {
-  width: 4px; height: 4px;
-  background: var(--text-faint);
-  border-radius: 50%;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-/* Hero stat strip */
-.hero-stats {
-  margin-top: 80px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-.hero-stat {
-  padding: 28px 24px;
-  border-right: 1px solid var(--border);
-  position: relative;
-}
-.hero-stat:last-child { border-right: none; }
-.hero-stat .num {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 38px;
-  letter-spacing: -0.03em;
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.hero-stat:nth-child(even) .num {
-  background: var(--gradient-2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.hero-stat .label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-
-/* === SECTION HEADERS === */
-section {
-  padding: 120px 0;
-  position: relative;
-}
-.sec-label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.sec-label::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: var(--cyan);
-}
-.sec-title {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(36px, 5vw, 64px);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: 24px;
-  max-width: 900px;
-  font-variation-settings: "opsz" 64;
-}
-.sec-title .italic {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--text-dim);
-}
-.sec-intro {
-  font-size: 18px;
-  color: var(--text-dim);
-  max-width: 720px;
-  margin-bottom: 64px;
-  line-height: 1.6;
-}
-
-/* === MARQUEE === */
-.marquee {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 24px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  background: var(--bg-2);
-  position: relative;
-}
-.marquee-track {
-  display: inline-flex;
-  gap: 56px;
-  animation: scroll 40s linear infinite;
-}
-.marquee-item {
-  font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 500;
-  color: var(--text-dim);
-  display: inline-flex;
-  align-items: center;
-  gap: 56px;
-}
-.marquee-item::after {
-  content: '◆';
-  color: var(--cyan);
-  font-size: 12px;
-}
-@keyframes scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* === IMPACT METRICS === */
-.metrics-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-}
-.metric {
-  background: var(--bg);
-  padding: 36px 32px;
-  position: relative;
-  transition: background 0.3s;
-}
-.metric:hover {
-  background: var(--bg-2);
-}
-.metric .num {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(48px, 5vw, 72px);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin-bottom: 12px;
-  font-variation-settings: "opsz" 72;
-}
-.metric:nth-child(3n+1) .num {
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.metric:nth-child(3n+2) .num {
-  background: var(--gradient-2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.metric:nth-child(3n+3) .num {
-  color: var(--phosphor);
-}
-.metric .lbl {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  margin-bottom: 14px;
-}
-.metric p {
-  font-size: 14px;
-  color: var(--text-dim);
-  line-height: 1.55;
-}
-
-/* === TRIFECTA === */
-.trifecta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-.trifecta-card {
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 36px 32px;
-  background: var(--surface);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.trifecta-card:hover {
-  border-color: var(--border-strong);
-  transform: translateY(-4px);
-  background: var(--surface-hover);
-}
-.trifecta-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 100% 80% at 50% 0%, var(--card-glow), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-}
-.trifecta-card:hover::before { opacity: 0.6; }
-.trifecta-card.cyan { --card-glow: rgba(0, 212, 255, 0.12); }
-.trifecta-card.copper { --card-glow: rgba(255, 131, 71, 0.12); }
-.trifecta-card.phosphor { --card-glow: rgba(180, 255, 92, 0.1); }
-
-.trifecta-num {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-faint);
-  letter-spacing: 0.16em;
-  margin-bottom: 16px;
-}
-.trifecta-card h3 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 28px;
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
-.trifecta-card.cyan h3 { color: var(--cyan); }
-.trifecta-card.copper h3 { color: var(--copper); }
-.trifecta-card.phosphor h3 { color: var(--phosphor); }
-
-.trifecta-role {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-dim);
-  margin-bottom: 20px;
-  letter-spacing: 0.04em;
-}
-.trifecta-card ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.trifecta-card ul li {
-  display: flex;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--text-dim);
-  line-height: 1.55;
-  position: relative;
-  padding-left: 16px;
-}
-.trifecta-card ul li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 5px;
-  height: 5px;
-  background: currentColor;
-  border-radius: 50%;
-  opacity: 0.5;
-}
-.trifecta-card.cyan ul li::before { background: var(--cyan); }
-.trifecta-card.copper ul li::before { background: var(--copper); }
-.trifecta-card.phosphor ul li::before { background: var(--phosphor); }
-
-/* === TIMELINE === */
-.timeline {
-  position: relative;
-  padding-left: 40px;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 12px;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(180deg, var(--cyan), var(--copper) 50%, var(--phosphor));
-  opacity: 0.4;
-}
-.tl-item {
-  position: relative;
-  margin-bottom: 56px;
-}
-.tl-item::before {
-  content: '';
-  position: absolute;
-  left: -34px;
-  top: 8px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 2px solid var(--cyan);
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.5);
-}
-.tl-item:nth-child(2)::before { border-color: var(--copper); box-shadow: 0 0 16px rgba(255, 131, 71, 0.5); }
-.tl-item:nth-child(3)::before { border-color: var(--phosphor); box-shadow: 0 0 16px rgba(180, 255, 92, 0.4); }
-.tl-item:nth-child(4)::before { border-color: var(--amber); box-shadow: 0 0 16px rgba(255, 177, 58, 0.4); }
-.tl-item:nth-child(5)::before { border-color: var(--cyan-soft); box-shadow: 0 0 16px rgba(74, 227, 255, 0.4); }
-
-.tl-date {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-faint);
-  letter-spacing: 0.1em;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-}
-.tl-item h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 24px;
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
-  line-height: 1.2;
-}
-.tl-company {
-  color: var(--text-dim);
-  font-size: 14px;
-  margin-bottom: 16px;
-  font-family: var(--font-mono);
-}
-.tl-desc {
-  color: var(--text-dim);
-  font-size: 15px;
-  line-height: 1.65;
-  max-width: 760px;
-}
-
-/* === INITIATIVES === */
-.initiatives {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-.init-card {
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px 28px;
-  background: var(--surface);
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.init-card:hover {
-  border-color: var(--border-strong);
-  background: var(--surface-hover);
-  transform: translateY(-3px);
-}
-.init-icon {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 18px;
-  display: inline-block;
-  padding: 5px 11px;
-  border: 1px solid rgba(0, 212, 255, 0.25);
-  border-radius: 6px;
-  background: rgba(0, 212, 255, 0.05);
-}
-.init-card:nth-child(2) .init-icon { color: var(--copper); border-color: rgba(255, 131, 71, 0.25); background: rgba(255, 131, 71, 0.05); }
-.init-card:nth-child(3) .init-icon { color: var(--phosphor); border-color: rgba(180, 255, 92, 0.25); background: rgba(180, 255, 92, 0.05); }
-.init-card:nth-child(4) .init-icon { color: var(--amber); border-color: rgba(255, 177, 58, 0.25); background: rgba(255, 177, 58, 0.05); }
-.init-card:nth-child(5) .init-icon { color: var(--cyan-soft); border-color: rgba(74, 227, 255, 0.25); background: rgba(74, 227, 255, 0.05); }
-.init-card:nth-child(6) .init-icon { color: var(--copper); border-color: rgba(255, 131, 71, 0.25); background: rgba(255, 131, 71, 0.05); }
-
-.init-card h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 14px;
-}
-.init-card p {
-  color: var(--text-dim);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* === SKILLS === */
-.skills-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px 80px;
-}
-.skill {
-  margin-bottom: 8px;
-}
-.skill-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 12px;
-}
-.skill-name {
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: -0.01em;
-}
-.skill-pct {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--cyan);
-}
-.skill-bar {
-  height: 4px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 999px;
-  overflow: hidden;
-  position: relative;
-}
-.skill-bar-fill {
-  height: 100%;
-  background: var(--gradient-1);
-  border-radius: 999px;
-  width: 0;
-  transition: width 1.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
-}
-.skill:nth-child(even) .skill-bar-fill { background: var(--gradient-2); box-shadow: 0 0 12px rgba(255, 131, 71, 0.4); }
-.skill:nth-child(even) .skill-pct { color: var(--copper); }
-
-/* === EDUCATION === */
-.edu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-}
-.edu-card {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 26px;
-  background: var(--surface);
-  transition: all 0.3s;
-}
-.edu-card:hover {
-  border-color: var(--border-strong);
-  background: var(--surface-hover);
-}
-.edu-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 4px 9px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  background: rgba(0, 212, 255, 0.1);
-  color: var(--cyan);
-  border: 1px solid rgba(0, 212, 255, 0.2);
-}
-.edu-tag.complete {
-  background: rgba(180, 255, 92, 0.1);
-  color: var(--phosphor);
-  border-color: rgba(180, 255, 92, 0.2);
-}
-.edu-card h5 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: -0.01em;
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-.edu-school {
-  color: var(--text-dim);
-  font-size: 13px;
-  margin-bottom: 8px;
-}
-.edu-date {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-faint);
-  letter-spacing: 0.06em;
-}
-
-.certs {
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-.cert {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  padding: 9px 16px;
-  border: 1px solid var(--border-strong);
-  border-radius: 999px;
-  color: var(--text-dim);
-  background: var(--surface);
-}
-
-/* === CTA === */
-.cta {
-  text-align: center;
-  padding: 140px 0;
-  position: relative;
-}
-.cta-quote {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(28px, 4vw, 52px);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  max-width: 1000px;
-  margin: 0 auto 48px;
-  font-variation-settings: "opsz" 48;
-}
-.cta-quote .accent {
-  background: var(--gradient-1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.cta-buttons {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* === FOOTER === */
-footer {
-  padding: 40px 0 60px;
-  border-top: 1px solid var(--border);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--text-faint);
-  letter-spacing: 0.04em;
-}
-footer .container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-/* === REVEAL ANIMATION === */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-stagger > * {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.reveal-stagger.in > *      { opacity: 1; transform: translateY(0); }
-.reveal-stagger.in > *:nth-child(1) { transition-delay: 0.05s; }
-.reveal-stagger.in > *:nth-child(2) { transition-delay: 0.12s; }
-.reveal-stagger.in > *:nth-child(3) { transition-delay: 0.19s; }
-.reveal-stagger.in > *:nth-child(4) { transition-delay: 0.26s; }
-.reveal-stagger.in > *:nth-child(5) { transition-delay: 0.33s; }
-.reveal-stagger.in > *:nth-child(6) { transition-delay: 0.4s; }
-.reveal-stagger.in > *:nth-child(7) { transition-delay: 0.47s; }
-.reveal-stagger.in > *:nth-child(8) { transition-delay: 0.54s; }
-.reveal-stagger.in > *:nth-child(9) { transition-delay: 0.61s; }
-
-/* === RESPONSIVE === */
-@media (max-width: 880px) {
-  .container { padding: 0 22px; }
-  nav.top ul { display: none; }
-  nav.top { padding: 14px 0; }
-  .hero { padding: 100px 0 60px; }
-  section { padding: 80px 0; }
-  .skills-wrap { grid-template-columns: 1fr; gap: 32px; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
-  .hero-stat { border-bottom: 1px solid var(--border); }
-  .hero-stat:nth-child(2n) { border-right: none; }
-  footer .container { flex-direction: column; }
-  .timeline { padding-left: 28px; }
-}
+/* contact */
+.contact{background:var(--panel);color:var(--panel-ink);padding:88px 0 40px;border-top:1px solid #333333}
+.contact h2{max-width:18ch}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.contact small{display:block;margin-top:64px;color:var(--panel-muted);font-size:14px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.flag{transition:none}.meter i{transition:none}}
 </style>
 </head>
-
 <body>
 
-<div class="bg-mesh"></div>
-<div class="bg-grid"></div>
-<div class="bg-noise"></div>
-
-<!-- NAV -->
-<nav class="top">
-  <div class="container">
-    <div class="logo">
-      <div class="logo-mark">HR</div>
-      <span>Harish<span style="color: var(--text-faint); font-weight: 400;"> · </span>Reliability</span>
-    </div>
+<nav class="nav" aria-label="Sections">
+  <div class="wrap">
+    <a class="brand" href="#top">Harish Ramdass Prabakaran</a>
     <ul>
-      <li><a href="#impact">Impact</a></li>
-      <li><a href="#trifecta">Foundation</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#initiatives">Initiatives</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#ai">Reliability and AI</a></li>
+      <li><a href="#work">Current work</a></li>
+      <li><a href="#tafe">TAFE</a></li>
+      <li><a href="#thesis">Thesis</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="container">
-    <h1 class="reveal">
-      Engineering the<br>
-      <span class="accent">future of reliability</span><br>
-      across <span class="copper">global biopharma.</span>
-    </h1>
-    <p class="hero-sub reveal">
-      <strong>Senior Manager — Reliability &amp; Automation Engineering</strong> at CSL Behring. Author of the
-      Global Reliability Engineering Standard. 9+ years building data-driven, AI-powered, GMP-compliant
-      reliability programs from the manufacturing floor to the enterprise standard.
-    </p>
-    <div class="hero-meta reveal">
-      <span>📍 Chicago, IL</span>
-      <span class="dot"></span>
-      <span>9+ years experience</span>
-      <span class="dot"></span>
-      <span>Six Sigma · VSME · TPM</span>
-      <span class="dot"></span>
-      <span>MBA — UIUC (in progress)</span>
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Harish Ramdass Prabakaran</h1>
+    <p class="lede"><b>Senior Manager, Reliability and Automation Engineering at CSL Behring.</b> Author of the company’s Global Reliability Engineering Standard, with 9+ years across production, quality and reliability.</p>
+    <div class="actions">
+      <a class="btn solid" href="#contact">Get in touch</a>
+      <a class="btn" href="#thesis">Read my thesis</a>
     </div>
-    <div class="hero-cta reveal">
-      <a class="btn btn-primary" href="#contact">Get in touch →</a>
-      <a class="btn" href="#experience">Explore the work</a>
-      <a class="btn" href="https://www.linkedin.com/in/harish-ramdass-prabakaran-72205577/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <p class="tagline">The vision of Maintenance Intelligence is to find equipment failures before they happen.</p>
+    <div class="scope">
+      <span class="flag" id="flag">Early warning</span>
+      <canvas id="signal" role="img" aria-label="Animated vibration signal. It runs steady, a fault pattern starts to grow and is flagged as an early warning, and the signal returns to steady after repair."></canvas>
+      <div class="key"><span><i style="background:var(--signal)"></i>Healthy vibration signal</span><span><i style="background:var(--alarm)"></i>Deterioration, flagged before failure</span></div>
     </div>
-
-    <!-- HERO STATS STRIP -->
-    <div class="hero-stats reveal-stagger">
-      <div class="hero-stat">
-        <div class="num" data-count="250" data-suffix="+">0</div>
-        <div class="label">Assets · Augury CBM</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" data-count="30" data-suffix="%">0</div>
-        <div class="label">Repeat-failure cut</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" data-count="114" data-suffix="">0</div>
-        <div class="label">New PM plans</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" data-count="1859" data-suffix="">0</div>
-        <div class="label">Components verified</div>
-      </div>
-      <div class="hero-stat">
-        <div class="num" data-count="66" data-suffix="%">0</div>
-        <div class="label">Deviations reduced</div>
-      </div>
+    <div class="readout">
+      <div><b class="num"><span data-count="250" data-pre="" data-suf="+">250+</span></b><span>assets on wireless condition monitoring</span></div>
+      <div><b class="num"><span data-count="30" data-pre="" data-suf="%">30%</span></b><span>fewer repeat equipment failures</span></div>
+      <div><b class="num"><span data-count="66" data-pre="" data-suf="%">66%</span></b><span>fewer out-of-tolerance deviations</span></div>
+      <div><b class="num">4 to <span data-count="10" data-pre="" data-suf="">10</span></b><span>units per shift on TAFE’s flagship tractor</span></div>
     </div>
   </div>
 </header>
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track">
-    <span class="marquee-item">RCM</span>
-    <span class="marquee-item">FMEA</span>
-    <span class="marquee-item">CBM</span>
-    <span class="marquee-item">Predictive Maintenance</span>
-    <span class="marquee-item">SAP PM</span>
-    <span class="marquee-item">Power BI · Seeq</span>
-    <span class="marquee-item">Augury IoT</span>
-    <span class="marquee-item">Palantir Foundry</span>
-    <span class="marquee-item">Microsoft Copilot RAG</span>
-    <span class="marquee-item">Metasys BAS</span>
-    <span class="marquee-item">GMP / FDA / EMA</span>
-    <span class="marquee-item">Lean Six Sigma</span>
-    <span class="marquee-item">TPM</span>
-    <!-- duplicate for seamless scroll -->
-    <span class="marquee-item">RCM</span>
-    <span class="marquee-item">FMEA</span>
-    <span class="marquee-item">CBM</span>
-    <span class="marquee-item">Predictive Maintenance</span>
-    <span class="marquee-item">SAP PM</span>
-    <span class="marquee-item">Power BI · Seeq</span>
-    <span class="marquee-item">Augury IoT</span>
-    <span class="marquee-item">Palantir Foundry</span>
-    <span class="marquee-item">Microsoft Copilot RAG</span>
-    <span class="marquee-item">Metasys BAS</span>
-    <span class="marquee-item">GMP / FDA / EMA</span>
-    <span class="marquee-item">Lean Six Sigma</span>
-    <span class="marquee-item">TPM</span>
-  </div>
-</div>
-
-<!-- IMPACT METRICS -->
-<section id="impact">
-  <div class="container">
-    <div class="sec-label reveal">01 — Impact at a glance</div>
-    <h2 class="sec-title reveal">Measurable results <span class="italic">across every program I've owned.</span></h2>
-    <p class="sec-intro reveal">
-      Reliability without numbers is just a slogan. Below: the outcomes I've delivered — quantified,
-      audited, and reproducible.
-    </p>
-
-    <div class="metrics-grid reveal-stagger">
-      <div class="metric">
-        <div class="num">250+</div>
-        <div class="lbl">Wireless CBM Assets</div>
-        <p>Augury IoT vibration monitoring deployed across critical rotating assets — site-wide predictive backbone.</p>
-      </div>
-      <div class="metric">
-        <div class="num">30%</div>
-        <div class="lbl">Repeat-failure reduction</div>
-        <p>FMEA + RCA corrective-action programme across critical biopharmaceutical production assets.</p>
-      </div>
-      <div class="metric">
-        <div class="num">66%</div>
-        <div class="lbl">Deviation reduction</div>
-        <p>Out-of-Tolerance: 6.80 → 2.30/day. On-time closures: 45.7% → 57.7%. Zero overdue records.</p>
-      </div>
-      <div class="metric">
-        <div class="num">1,859</div>
-        <div class="lbl">Components verified</div>
-        <p>Pretreatment + Purified Water systems, fully documented across 45 P&amp;IDs in the Utilities Reliability Project.</p>
-      </div>
-      <div class="metric">
-        <div class="num">237</div>
-        <div class="lbl">New SAP equipment #s</div>
-        <p>Created and tagged in CMMS — closing a multi-year asset-coverage gap across utilities.</p>
-      </div>
-      <div class="metric">
-        <div class="num">114</div>
-        <div class="lbl">New PM plans generated</div>
-        <p>Adding previously unmaintained assets to the programme; aligned with RCM + manufacturer recommendations.</p>
-      </div>
-      <div class="metric">
-        <div class="num">20%</div>
-        <div class="lbl">Proactive maintenance shift</div>
-        <p>SAP-PM-driven shift in posture from reactive firefighting to proactive PM/PdM execution.</p>
-      </div>
-      <div class="metric">
-        <div class="num">150%</div>
-        <div class="lbl">Throughput uplift</div>
-        <p>TAFE: flagship model from 4 → 10 units/shift via Lean Six Sigma + TPM. National Award winner.</p>
-      </div>
-      <div class="metric">
-        <div class="num">$16K</div>
-        <div class="lbl">Identified in savings</div>
-        <p>FMEA + why-why analysis on filling-line vial breakages during CSL research engineering tenure.</p>
-      </div>
+<main>
+<section id="results">
+  <div class="wrap">
+    <h2>Results, with the numbers behind them</h2>
+    <p class="lede intro muted">Outcomes from programmes I have owned at CSL Behring.</p>
+    <div class="results">
+      <div class="r"><b class="num"><span data-count="250" data-pre="" data-suf="+">250+</span></b><div><strong>Assets on wireless vibration monitoring</strong><span class="muted">Sensors on critical rotating equipment across the site, giving early warning of degradation.</span></div></div>
+      <div class="r"><b class="num"><span data-count="30" data-pre="" data-suf="%">30%</span></b><div><strong>Reduction in repeat failures</strong><span class="muted">FMEA and root-cause programme with targeted corrective actions on critical production assets.</span></div></div>
+      <div class="r"><b class="num"><span data-count="66" data-pre="" data-suf="%">66%</span></b><div><strong>Reduction in out-of-tolerance deviations</strong><span class="muted">From 6.80 to 2.30 per workday as Investigation Owner, with on-time closure up from 45.7% to 57.7% and zero overdue records.</span></div></div>
+      <div class="r"><b class="num"><span data-count="20" data-pre="" data-suf="%">20%</span></b><div><strong>Shift to proactive maintenance</strong><span class="muted">From reactive repair to planned and predictive work, driven through SAP PM.</span></div></div>
+      <div class="r"><b class="num"><span data-count="1859" data-pre="" data-suf="" data-comma="1">1,859</span></b><div><strong>Components verified in the Utilities Reliability Project</strong><span class="muted">Pretreatment and purified water systems walked down across 45 P&amp;IDs, adding 237 equipment records and 114 preventive maintenance plans.</span></div></div>
+      <div class="r"><b class="num"><span data-count="2.36" data-dec="2" data-pre="$" data-suf="M">$2.36M</span></b><div><strong>Cost avoidance from predictive maintenance</strong><span class="muted">Three failures caught early on critical utilities and air-handling equipment, recorded as site success stories.</span></div></div>
+      <div class="r"><b class="num"><span data-count="16" data-pre="$" data-suf="K">$16K</span></b><div><strong>Savings identified as an intern</strong><span class="muted">FMEA and why-why analysis on vial breakage at the filling line.</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- TRIFECTA -->
-<section id="trifecta">
-  <div class="container">
-    <div class="sec-label reveal">02 — The trifecta</div>
-    <h2 class="sec-title reveal">A rare cross-functional foundation: <span class="italic">Quality · Production · Reliability.</span></h2>
-    <p class="sec-intro reveal">
-      Most reliability leaders come from one discipline. I've owned all three — and that
-      systems-level perspective is what lets me make decisions others can't see.
-    </p>
-
-    <div class="trifecta">
-      <div class="trifecta-card cyan reveal">
-        <div class="trifecta-num">01 / Quality</div>
-        <h3>Quality.</h3>
-        <div class="trifecta-role">Investigation Owner · CSL Behring · 2021–2022</div>
-        <ul>
-          <li>Led GMP deviation investigations in a cGMP biopharmaceutical environment</li>
-          <li>Full CAPA ownership: scope, root cause, product impact, corrective + preventive actions</li>
-          <li>Reduced Out-of-Tolerance deviations 66% (6.80 → 2.30/workday) — zero overdue records</li>
-          <li>Improved on-time closure rates 45.7% → 57.7%</li>
-          <li>Maintained FDA / EMA audit-ready documentation throughout</li>
-        </ul>
+<section id="career" style="padding-top:0">
+  <div class="wrap">
+    <h2>From the assembly line to the global standard</h2>
+    <div class="tl" role="img" aria-label="Timeline from 2011 to 2026. Work: four years at TAFE, then five-plus years at CSL Behring across three roles. Education: a bachelor's, a master's, a certificate and an MBA in progress.">
+      <div class="tl-head">
+        <p><b class="num">9+</b> years in industry</p>
+        <span>4 years at TAFE, then 5+ years at CSL Behring across three roles</span>
       </div>
-
-      <div class="trifecta-card copper reveal">
-        <div class="trifecta-num">02 / Production</div>
-        <h3>Production.</h3>
-        <div class="trifecta-role">Manufacturing Engineer · TAFE 2015–2019 · CSL 2020</div>
-        <ul>
-          <li>Led 110-person team across Pre-paint Chassis cells (Cell 1, 2, 3 &amp; 4WD) at TAFE</li>
-          <li>Established work standards; optimised workflows by manufacturing sequence + lead time</li>
-          <li>Generated 150 Kaizens; <strong>National Lean Six Sigma Excellence Award 2017</strong></li>
-          <li>T4 cycle time reduced by 5,700 sec; 4 → 10 units per shift on flagship model</li>
-          <li>CSL intern: FMEA on filling-line bottleneck → $16K savings identified</li>
-        </ul>
+      <div class="tl-lane">
+        <span class="tl-name">Work</span>
+        <div class="tl-track tl-work">
+          <em style="left:28.13%">TAFE<span class="x">, 4 years</span></em>
+          <em class="right" style="right:0.8%">CSL Behring<span class="x">, 5+ years</span></em>
+          <i style="left:28.13%;width:25%"><b>1</b></i>
+          <i class="blip" style="left:58.33%;width:1.56%"></i>
+          <i style="left:65.1%;width:5.21%"><b>2</b></i>
+          <i style="left:70.31%;width:9.9%"><b>3</b></i>
+          <i class="now" style="left:80.21%;width:19%"><b>4</b></i>
+        </div>
       </div>
-
-      <div class="trifecta-card phosphor reveal">
-        <div class="trifecta-num">03 / Reliability</div>
-        <h3>Reliability.</h3>
-        <div class="trifecta-role">Sr. Manager · Reliability + BAS · CSL 2023–Present</div>
+      <div class="tl-lane">
+        <span class="tl-name">Education</span>
+        <div class="tl-track tl-edu">
+          <em style="left:3.65%">B.E.</em><i style="left:3.65%;width:23.96%"></i>
+          <em style="left:53.65%">M.S.</em><i style="left:53.65%;width:11.46%"></i>
+          <em class="right" style="right:0">MBA<span class="x">, AI certificate</span></em><i style="left:93.75%;width:6.25%"></i><i class="row2" style="left:95.31%;width:2.6%"></i>
+        </div>
+      </div>
+      <div class="tl-axis"><span></span><div><span>2011</span><span>2013</span><span>2015</span><span>2017</span><span>2019</span><span>2021</span><span>2023</span><span>2025</span></div></div>
+      <div class="tl-keys">
+        <ol>
+          <li><b>1</b><span>Manufacturing Engineer, TAFE <small>2015 to 2019</small></span></li>
+          <li><b class="blipk"></b><span>Intern, CSL Behring <small>2020</small></span></li>
+          <li><b>2</b><span>Investigation Owner <small>2021 to 2022</small></span></li>
+          <li><b>3</b><span>Engineering Business Performance Manager <small>2022 to 2023</small></span></li>
+          <li><b class="nowk">4</b><span>Sr. Manager, Reliability and Automation <small>2023 to now</small></span></li>
+        </ol>
         <ul>
-          <li>Architected site-wide RCM / CBM / PdM strategy for a regulated biopharma site</li>
-          <li>Authored CSL Global Reliability Engineering Standard — adopted at all global sites</li>
-          <li>Deployed Augury IoT vibration monitoring across 250+ assets</li>
-          <li>Built CBM programmes across Fill Finish, Utilities, Bulk Mfg (CIP Skids)</li>
-          <li>Piloting Microsoft Copilot RAG + Palantir Foundry for AI-driven maintenance</li>
+          <li><b></b><span>B.E. Mechanical Engineering, Anna University <small>2011 to 2015</small></span></li>
+          <li><b></b><span>M.S. Industrial Engineering, UIC <small>2019 to 2021</small></span></li>
+          <li><b></b><span>Certificate in Agentic AI, Johns Hopkins <small>2026</small></span></li>
+          <li><b></b><span>MBA, UIUC <small>2026 to 2028</small></span></li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE TIMELINE -->
-<section id="experience">
-  <div class="container">
-    <div class="sec-label reveal">03 — Career progression</div>
-    <h2 class="sec-title reveal">From the floor to <span class="italic">the global standard.</span></h2>
-
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <div class="tl-date">Nov 2023 — Present</div>
-        <h4>Sr. Manager, Reliability &amp; Automation Engineering (BAS)</h4>
-        <div class="tl-company">CSL Behring · Kankakee, IL</div>
-        <p class="tl-desc">
-          Architected site-wide RCM / CBM / PdM strategy scalable across CSL's global multi-site operations.
-          Authored the CSL Global Reliability Engineering Standard — now the enterprise benchmark.
-          Deployed Augury wireless vibration monitoring across 250+ critical rotating assets. Built CBM programmes
-          for Fill Finish (Capper, Isolator, Tunnel — Optima), Utilities (hot-flush, loop utilisation), and Bulk Mfg
-          CIP Skids. Piloting Microsoft Copilot RAG agent and building AI-Powered Maintenance Intelligence on
-          Palantir Foundry for the 16N Fill Finish line. Dual scope: Reliability + BAS Automation (Metasys / Johnson Controls).
-          Technical representative for FDA / EMA inspections.
-        </p>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-date">Apr 2022 — Nov 2023</div>
-        <h4>Engineering Business Performance Manager</h4>
-        <div class="tl-company">CSL Behring · Kankakee, IL</div>
-        <p class="tl-desc">
-          Built enterprise Power BI + Seeq dashboards governing CM/PM ratio, downtime, finance, safety, and PM-duration
-          KPIs. Designed the Critical Utilities reliability KPI framework — direct precursor to the Augury / CBM programme.
-          Applied CSL Transformation methodologies (Kaizen, 5-Whys, RCA, Sustainability Plans) to drive durable
-          maintenance improvements across the site. Standardised KPI definitions across engineering functions, cutting
-          reporting cycle time and improving decision quality.
-        </p>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-date">Jun 2021 — Apr 2022</div>
-        <h4>Investigation Owner</h4>
-        <div class="tl-company">CSL Behring · Kankakee, IL</div>
-        <p class="tl-desc">
-          Led cross-functional investigations of GMP deviations in a cGMP biopharmaceutical environment. Reduced
-          Out-of-Tolerance deviations from 6.80 → 2.30 per workday and improved on-time closure from 45.7% → 57.7% —
-          while maintaining zero overdue quality records. Determined scope, product impact, root cause, and CAPAs;
-          maintained continuous FDA / EMA audit readiness.
-        </p>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-date">May 2020 — Jul 2020</div>
-        <h4>Manufacturing / Research Engineering Intern</h4>
-        <div class="tl-company">CSL Behring · Kankakee, IL</div>
-        <p class="tl-desc">
-          Conducted FMEA analysis to troubleshoot bottleneck processes; identified $16,000 in savings by addressing
-          vial breakages on the filling line. Prepared trend analysis reports using Minitab and Pareto charts; collaborated
-          across Quality, Maintenance, and Manufacturing to remove non-value-added cleaning / re-sterilising activities
-          and eliminate 8 hours of downtime (Master's Thesis applied).
-        </p>
-      </div>
-
-      <div class="tl-item reveal">
-        <div class="tl-date">Jul 2015 — Jul 2019</div>
-        <h4>Manufacturing Engineer — Production</h4>
-        <div class="tl-company">Tractors and Farm Equipment Ltd (TAFE) · Madurai, India</div>
-        <p class="tl-desc">
-          Led a team of 110 across Pre-paint Chassis build cells; implemented Lean Six Sigma, TPM, and VSME methodologies
-          to scale flagship model production from 4 to 10 units/shift. Winner of the <strong>National Lean Six Sigma
-          Excellence Award 2017</strong>. Generated 150 Kaizens; drove RCA, ECNs, and process improvements via VSM,
-          process flow analysis, and cost-reduction frameworks. Achieved 80% reduction in brake-pedal uneven issues
-          using Six Sigma (90 → 27 occurrences).
-        </p>
-      </div>
+    <div class="roles">
+      <div class="role"><div class="when">Nov 2023 to present</div><div><h3>Sr. Manager, Reliability and Automation Engineering</h3><div class="org">CSL Behring, Kankakee, IL</div><p>Set the site-wide strategy for reliability-centered, condition-based and predictive maintenance, and wrote the Global Reliability Engineering Standard now used across CSL’s manufacturing sites. Deployed wireless vibration monitoring on 250+ critical assets. Also lead building automation on the Metasys platform, and represent reliability engineering in FDA and EMA inspections.</p></div></div>
+      <div class="role"><div class="when">Apr 2022 to Nov 2023</div><div><h3>Engineering Business Performance Manager</h3><div class="org">CSL Behring, Kankakee, IL</div><p>Built Power BI and Seeq dashboards for maintenance ratios, downtime, finance and safety, and standardised KPI definitions across engineering. Designed the critical utilities KPI framework that later became the basis for condition monitoring.</p></div></div>
+      <div class="role"><div class="when">Jun 2021 to Apr 2022</div><div><h3>Investigation Owner</h3><div class="org">CSL Behring, Kankakee, IL</div><p>Led cross-functional investigations of GMP deviations: scope, product impact, root cause and corrective actions, with continuous audit readiness.</p></div></div>
+      <div class="role"><div class="when">May to Jul 2020</div><div><h3>Manufacturing and Research Engineering Intern</h3><div class="org">CSL Behring, Kankakee, IL</div><p>Studied vial breakage on the filling line with FMEA, Minitab and Pareto analysis. The work became my master’s thesis.</p></div></div>
+      <div class="role"><div class="when">Jul 2015 to Jul 2019</div><div><h3>Manufacturing Engineer, Production</h3><div class="org">Tractors and Farm Equipment Ltd (TAFE), Madurai, India</div><p>Led 110 people across four chassis assembly cells and ran the Lean Six Sigma and TPM work described below.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- STRATEGIC INITIATIVES -->
-<section id="initiatives" style="background: var(--bg-2);">
-  <div class="container">
-    <div class="sec-label reveal">04 — Signature initiatives</div>
-    <h2 class="sec-title reveal">Where I'm <span class="italic">moving the field forward.</span></h2>
+<section class="ai" id="ai">
+  <div class="wrap">
+    <h2>Where reliability meets AI</h2>
+    <p class="lede intro muted">Each project starts from a maintenance question, uses AI for the part that is too much to read or watch by hand, and leaves the decision with people.</p>
+    <div class="projs">
+      <article class="proj">
+        <div class="viz"><svg viewBox="0 0 320 200" role="img" aria-label="A vibration trace that runs steady, then grows spiky and is flagged">
+<g stroke="#74777A" stroke-width="1"><line x1="16" y1="60" x2="304" y2="60"/><line x1="16" y1="100" x2="304" y2="100"/><line x1="16" y1="140" x2="304" y2="140"/></g>
+<polyline fill="none" stroke="#E6E6E6" stroke-width="2.5" stroke-linejoin="round" points="16,100 28,94 40,105 52,96 64,103 76,95 88,106 100,97 112,104 124,95 136,105 148,97 160,103 172,96 184,104"/>
+<polyline fill="none" stroke="#FC1921" stroke-width="2.5" stroke-linejoin="round" points="184,104 194,84 202,118 210,70 218,128 226,62 234,134 242,56 250,140 258,66 266,126 274,74 282,120 292,88 304,100"/>
+<line x1="184" y1="30" x2="184" y2="176" stroke="#FC1921" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="140" y="14" width="88" height="22" rx="4" fill="#FC1921"/><text x="184" y="30" text-anchor="middle" font-size="12" font-weight="600" fill="#FFFFFF" font-family="Arial,sans-serif">Early warning</text></svg></div>
+        <div>
+          <div class="phead"><h3>Wireless vibration monitoring</h3><span class="status live">Live</span></div>
+          <ol class="steps3">
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 9a3 3 0 1 1 4.5 2.6c-.9.5-1.5 1.200-1.500 2.400" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="18" r="1.4" fill="currentColor"/></svg></span><small>The question</small><p>Is this machine starting to fail?</p></li>
+            <li><span class="ic ai-ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3l2.200 5.800L20 11l-5.800 2.200L12 19l-2.200-5.800L4 11l5.800-2.200z" fill="currentColor"/></svg></span><small>What the AI does</small><p>Machine learning watches vibration from 250+ assets around the clock and flags developing faults early.</p></li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z" fill="currentColor"/></svg></span><small>Who decides</small><p>Reliability engineers confirm the finding and plan the repair.</p></li>
+          </ol>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="viz"><svg viewBox="0 0 320 200" role="img" aria-label="Manuals, alarm codes and work history feed one answer with its sources">
+<g fill="none" stroke="#D0D0D0" stroke-width="2"><rect x="22" y="28" width="62" height="38" rx="4"/><rect x="22" y="81" width="62" height="38" rx="4"/><rect x="22" y="134" width="62" height="38" rx="4"/></g>
+<g fill="#D0D0D0" font-size="11" font-family="Arial,sans-serif" text-anchor="middle"><text x="53" y="51">Manuals</text><text x="53" y="104">Alarms</text><text x="53" y="157">History</text></g>
+<g fill="none" stroke="#E6E6E6" stroke-width="2"><path d="M84 47 C120 47 120 100 152 100"/><path d="M84 100 L152 100"/><path d="M84 153 C120 153 120 100 152 100"/></g>
+<path d="M160 58 h126 a10 10 0 0 1 10 10 v64 a10 10 0 0 1 -10 10 h-84 l-18 18 v-18 h-24 a10 10 0 0 1 -10 -10 v-64 a10 10 0 0 1 10 -10z" fill="#FC1921"/>
+<g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><line x1="170" y1="80" x2="276" y2="80"/><line x1="170" y1="96" x2="262" y2="96"/><line x1="170" y1="112" x2="236" y2="112"/></g>
+<circle cx="272" cy="124" r="10" fill="#FFFFFF"/><path d="M267 124 l4 4 l7 -8" fill="none" stroke="#FC1921" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="phead"><h3>Maintenance troubleshooting agent</h3><span class="status build">In build</span></div>
+          <ol class="steps3">
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 9a3 3 0 1 1 4.5 2.6c-.9.5-1.5 1.200-1.500 2.400" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="18" r="1.4" fill="currentColor"/></svg></span><small>The question</small><p>What does this alarm mean, and what fixed it last time?</p></li>
+            <li><span class="ic ai-ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3l2.200 5.800L20 11l-5.800 2.200L12 19l-2.200-5.800L4 11l5.800-2.200z" fill="currentColor"/></svg></span><small>What the AI does</small><p>A language-model agent searches manuals, alarm codes, spare parts and work history, then answers with its sources.</p></li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z" fill="currentColor"/></svg></span><small>Who decides</small><p>The technician at the machine.</p></li>
+          </ol>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="viz"><svg viewBox="0 0 320 200" role="img" aria-label="A pile of work orders turned into a ranked chart of failure modes">
+<g fill="none" stroke="#D0D0D0" stroke-width="2"><rect x="20" y="40" width="88" height="14" rx="3"/><rect x="20" y="62" width="88" height="14" rx="3"/><rect x="20" y="84" width="88" height="14" rx="3"/><rect x="20" y="106" width="88" height="14" rx="3"/><rect x="20" y="128" width="88" height="14" rx="3"/><rect x="20" y="150" width="88" height="14" rx="3"/></g>
+<path d="M118 102 h32 m-9 -8 l9 8 l-9 8" fill="none" stroke="#E6E6E6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="166" y1="168" x2="304" y2="168" stroke="#D0D0D0" stroke-width="2"/>
+<rect x="172" y="44" width="22" height="124" fill="#FC1921"/><rect x="200" y="84" width="22" height="84" fill="#E6E6E6"/><rect x="228" y="110" width="22" height="58" fill="#E6E6E6"/><rect x="256" y="132" width="22" height="36" fill="#E6E6E6"/><rect x="284" y="148" width="16" height="20" fill="#E6E6E6"/>
+<text x="183" y="36" text-anchor="middle" font-size="11" fill="#FFFFFF" font-family="Arial,sans-serif">Top failure mode</text></svg></div>
+        <div>
+          <div class="phead"><h3>AI on maintenance history</h3><span class="status pilot">In pilot</span></div>
+          <ol class="steps3">
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 9a3 3 0 1 1 4.5 2.6c-.9.5-1.5 1.200-1.500 2.400" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="18" r="1.4" fill="currentColor"/></svg></span><small>The question</small><p>Do our maintenance plans match how equipment really fails?</p></li>
+            <li><span class="ic ai-ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3l2.200 5.800L20 11l-5.800 2.200L12 19l-2.200-5.800L4 11l5.800-2.200z" fill="currentColor"/></svg></span><small>What the AI does</small><p>Language models read years of work orders to find failure modes, missing spare parts and records that do not add up.</p></li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z" fill="currentColor"/></svg></span><small>Who decides</small><p>Planners, reliability engineers and supervisors approve every change.</p></li>
+          </ol>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="viz"><svg viewBox="0 0 320 200" role="img" aria-label="A fleet of assets ranked by health, with the worst two flagged">
+<g font-size="11" fill="#D0D0D0" font-family="Arial,sans-serif"><text x="18" y="42">Asset 7</text><text x="18" y="70">Asset 2</text><text x="18" y="98">Asset 9</text><text x="18" y="126">Asset 4</text><text x="18" y="154">Asset 1</text><text x="18" y="182">Asset 5</text></g>
+<rect x="72" y="30" width="226" height="16" rx="2" fill="#FC1921"/><rect x="72" y="58" width="178" height="16" rx="2" fill="#FC1921"/>
+<rect x="72" y="86" width="112" height="16" rx="2" fill="#E6E6E6"/><rect x="72" y="114" width="86" height="16" rx="2" fill="#E6E6E6"/><rect x="72" y="142" width="60" height="16" rx="2" fill="#E6E6E6"/><rect x="72" y="170" width="42" height="16" rx="2" fill="#E6E6E6"/>
+<line x1="160" y1="22" x2="160" y2="192" stroke="#D0D0D0" stroke-width="1.5" stroke-dasharray="4 4"/><text x="164" y="20" font-size="11" fill="#D0D0D0" font-family="Arial,sans-serif">Inspect first</text></svg></div>
+        <div>
+          <div class="phead"><h3>Equipment health models</h3><span class="status build">In build</span></div>
+          <ol class="steps3">
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 9a3 3 0 1 1 4.5 2.6c-.9.5-1.5 1.200-1.500 2.400" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="18" r="1.4" fill="currentColor"/></svg></span><small>The question</small><p>Which assets in a fleet are drifting from normal?</p></li>
+            <li><span class="ic ai-ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3l2.200 5.800L20 11l-5.800 2.200L12 19l-2.200-5.800L4 11l5.800-2.200z" fill="currentColor"/></svg></span><small>What the AI does</small><p>Models score each asset from process and motor-current data and rank the fleet every week.</p></li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z" fill="currentColor"/></svg></span><small>Who decides</small><p>Engineers choose which assets to inspect first.</p></li>
+          </ol>
+        </div>
+      </article>
+      <article class="proj">
+        <div class="viz"><svg viewBox="0 0 320 200" role="img" aria-label="Asset health declining over time, with run, refurbish and replace points marked">
+<line x1="28" y1="160" x2="304" y2="160" stroke="#D0D0D0" stroke-width="2"/><line x1="28" y1="26" x2="28" y2="160" stroke="#D0D0D0" stroke-width="2"/>
+<path d="M28 44 C120 46 170 62 210 96 S280 150 304 156" fill="none" stroke="#E6E6E6" stroke-width="3"/>
+<path d="M210 96 C240 80 270 74 304 72" fill="none" stroke="#FC1921" stroke-width="2.5" stroke-dasharray="6 5"/>
+<g><circle cx="110" cy="50" r="6" fill="#E6E6E6"/><circle cx="210" cy="96" r="6" fill="#FC1921"/><circle cx="278" cy="144" r="6" fill="#FFFFFF"/></g>
+<g font-size="12" font-family="Arial,sans-serif" font-weight="600"><text x="110" y="182" text-anchor="middle" fill="#E6E6E6">Run</text><text x="210" y="182" text-anchor="middle" fill="#FFFFFF">Refurbish</text><text x="278" y="182" text-anchor="middle" fill="#FFFFFF">Replace</text></g>
+<text x="34" y="22" font-size="11" fill="#D0D0D0" font-family="Arial,sans-serif">Asset health</text></svg></div>
+        <div>
+          <div class="phead"><h3>Capital replacement planning</h3><span class="status build">Planned</span></div>
+          <ol class="steps3">
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 9a3 3 0 1 1 4.5 2.6c-.9.5-1.5 1.200-1.500 2.400" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="18" r="1.4" fill="currentColor"/></svg></span><small>The question</small><p>Should we run, refurbish or replace this asset, and when?</p></li>
+            <li><span class="ic ai-ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 3l2.200 5.800L20 11l-5.800 2.200L12 19l-2.200-5.800L4 11l5.800-2.200z" fill="currentColor"/></svg></span><small>What the AI does</small><p>Failure-probability models combine asset health, criticality and cost into a recommendation.</p></li>
+            <li><span class="ic"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21c0-4.400 3.600-7 8-7s8 2.600 8 7z" fill="currentColor"/></svg></span><small>Who decides</small><p>Engineering, finance and site leadership.</p></li>
+          </ol>
+        </div>
+      </article>
+    </div>
+    <p class="rule">The AI does the reading. People make the call.</p>
+  </div>
+</section>
 
-    <div class="initiatives reveal-stagger">
-      <div class="init-card">
-        <span class="init-icon">AI · RAG</span>
-        <h4>Microsoft Copilot RAG Agent</h4>
-        <p>Piloting an AI-powered troubleshooting agent using Retrieval-Augmented Generation. Natural-language queries
-          mine maintenance manuals and equipment history to accelerate diagnostics and reduce MTTR.</p>
-      </div>
-      <div class="init-card">
-        <span class="init-icon">Standards · Global</span>
-        <h4>Global Reliability Engineering Standard</h4>
-        <p>Authored the enterprise-wide framework adopted across all CSL sites — standardising RCM, FMEA, CBM, asset
-          criticality, CMMS governance, and PM/PdM strategy worldwide.</p>
-      </div>
-      <div class="init-card">
-        <span class="init-icon">Palantir · Foundry</span>
-        <h4>AI Maintenance Intelligence</h4>
-        <p>Building an AI-powered maintenance intelligence platform on Palantir Foundry with Process Modelling for
-          the 16N Fill Finish line — predictive insights, digital asset twins, data-driven maintenance.</p>
-      </div>
-      <div class="init-card">
-        <span class="init-icon">IoT · Augury</span>
-        <h4>Site-Wide Wireless Vibration</h4>
-        <p>Deployed Augury IoT vibration monitoring across 250+ assets — continuous real-time predictive maintenance
-          backbone for early degradation detection across the site.</p>
-      </div>
-      <div class="init-card">
-        <span class="init-icon">CBM · Multi-domain</span>
-        <h4>CBM Across 3 Domains</h4>
-        <p>Fill Finish (Capper, Isolator, Tunnel — Optima), Utilities (hot-flush / loop utilisation), Bulk Mfg
-          CIP Skids (18.38 &amp; 21N) and Fractionation (Agitator Current Monitoring).</p>
-      </div>
-      <div class="init-card">
-        <span class="init-icon">BAS · Metasys</span>
-        <h4>Building Automation (Johnson Controls)</h4>
-        <p>Managing the Metasys BAS platform — environmental monitoring for all GxP sites and safety systems
-          (O₂ / LEL monitoring) across the Kankakee site.</p>
-      </div>
+<section id="work">
+  <div class="wrap">
+    <h2>What else I run</h2>
+    <div class="work">
+      <article><h3>Global Reliability Engineering Standard</h3><p>The enterprise framework for RCM, FMEA, condition monitoring, asset criticality, CMMS governance and maintenance strategy, adopted across CSL sites.</p></article>
+      <article><h3>Site-wide wireless vibration monitoring</h3><p>Continuous monitoring on 250+ assets as the predictive maintenance backbone for the site.</p></article>
+      <article><h3>Condition monitoring across three domains</h3><p>Programmes for fill and finish equipment, utilities, and bulk manufacturing clean-in-place skids, plus agitator current monitoring.</p></article>
+      <article><h3>Building automation</h3><p>The Metasys platform from Johnson Controls: environmental monitoring for GxP areas and safety monitoring across the site.</p></article>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
-    <div class="sec-label reveal">05 — Technical depth</div>
-    <h2 class="sec-title reveal">Core competencies <span class="italic">— calibrated by years of execution.</span></h2>
-
-    <div class="skills-wrap reveal">
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Skills and education</h2>
+    <div class="two">
       <div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">Reliability Strategy (RCM / FMEA / CBM)</span><span class="skill-pct">96%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="96"></div></div></div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">Predictive Maintenance / PdM</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="95"></div></div></div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">Lean Six Sigma / TPM</span><span class="skill-pct">94%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="94"></div></div></div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">GMP / FDA / EMA Compliance</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="92"></div></div></div>
+        <div class="level"><div><span>Reliability strategy (RCM, FMEA, CBM)</span><b>96%</b></div><div class="meter"><i style="width:96%"></i></div></div>
+        <div class="level"><div><span>Predictive maintenance</span><b>95%</b></div><div class="meter"><i style="width:95%"></i></div></div>
+        <div class="level"><div><span>Lean Six Sigma and TPM</span><b>94%</b></div><div class="meter"><i style="width:94%"></i></div></div>
+        <div class="level"><div><span>GMP, FDA and EMA compliance</span><b>92%</b></div><div class="meter"><i style="width:92%"></i></div></div>
+        <div class="level"><div><span>CMMS optimisation (SAP PM)</span><b>90%</b></div><div class="meter"><i style="width:90%"></i></div></div>
+        <div class="level"><div><span>Digital analytics (Power BI, Seeq)</span><b>88%</b></div><div class="meter"><i style="width:88%"></i></div></div>
+        <div class="level"><div><span>Building automation (Metasys BAS)</span><b>82%</b></div><div class="meter"><i style="width:82%"></i></div></div>
+        <div class="level"><div><span>AI and agentic tools</span><b>80%</b></div><div class="meter"><i style="width:80%"></i></div></div>
+        <p class="note">Self-assessed, based on years of hands-on use.</p>
       </div>
-      <div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">CMMS Optimisation (SAP PM)</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="90"></div></div></div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">Digital Analytics (Power BI / Seeq)</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="88"></div></div></div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">Building Automation (Metasys BAS)</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="82"></div></div></div>
-        <div class="skill"><div class="skill-head"><span class="skill-name">AI / Agentic Tools (Copilot RAG)</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-bar-fill" data-fill="80"></div></div></div>
-      </div>
+      <ul class="edu">
+        <li><strong>MBA, University of Illinois Urbana-Champaign</strong><span class="state going">In progress</span><small>Jan 2026 to May 2028</small></li>
+        <li><strong>Certificate Program in Agentic AI, Johns Hopkins University</strong><span class="state done">Completed</span><small>16-week programme, Apr to Aug 2026</small></li>
+        <li><strong>M.S. Industrial Engineering, University of Illinois Chicago</strong><span class="state done">Completed</span><small>Aug 2019 to May 2021</small></li>
+        <li><strong>B.E. Mechanical Engineering, Anna University</strong><span class="state done">Completed</span><small>Aug 2011 to May 2015</small></li>
+        <li><strong>Certifications</strong><small>Six Sigma Green Belt, VSME / VLFM, TPM Level 1 and 2</small></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education" style="background: var(--bg-2);">
-  <div class="container">
-    <div class="sec-label reveal">06 — Education &amp; development</div>
-    <h2 class="sec-title reveal">Always <span class="italic">in motion.</span></h2>
-
-    <div class="edu-grid reveal-stagger">
-      <div class="edu-card">
-        <span class="edu-tag">In Progress</span>
-        <h5>Master of Business Administration (MBA)</h5>
-        <div class="edu-school">University of Illinois Urbana-Champaign (UIUC)</div>
-        <div class="edu-date">Jan 2026 → May 2028</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">In Progress</span>
-        <h5>Certificate in Agentic AI</h5>
-        <div class="edu-school">16-Week Professional Programme</div>
-        <div class="edu-date">Apr 2026 → Aug 2026</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag complete">Completed</span>
-        <h5>M.S. Industrial Engineering</h5>
-        <div class="edu-school">University of Illinois at Chicago</div>
-        <div class="edu-date">Aug 2019 → May 2021</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag complete">Completed</span>
-        <h5>B.E. Mechanical Engineering</h5>
-        <div class="edu-school">Anna University, India</div>
-        <div class="edu-date">Aug 2011 → May 2015</div>
-      </div>
+<section id="tafe" style="padding-top:0">
+  <div class="wrap">
+    <h2>Four years running a tractor assembly line</h2>
+    <p class="lede intro muted">At TAFE I led the pre-paint chassis build cells and learned to prove every improvement with a before and an after.</p>
+    <div class="ba">
+      <div><h3>Flagship T4 model</h3><span class="muted">Units built per shift</span>
+        <div class="bars"><div class="bar"><span>Before</span><i style="width:40%"></i><b>4</b></div><div class="bar"><span>After</span><i class="after" style="width:100%"></i><b>10</b></div></div></div>
+      <div><h3>100 HP models</h3><span class="muted">Tractors built per day</span>
+        <div class="bars"><div class="bar"><span>Before</span><i style="width:25%"></i><b>2</b></div><div class="bar"><span>After</span><i class="after" style="width:100%"></i><b>8</b></div></div></div>
+      <div><h3>Brake-pedal defect</h3><span class="muted">Occurrences, Six Sigma project</span>
+        <div class="bars"><div class="bar"><span>Before</span><i style="width:100%"></i><b>90</b></div><div class="bar"><span>After</span><i class="after" style="width:30%"></i><b>27</b></div></div></div>
     </div>
-
-    <div class="certs reveal">
-      <span class="cert">◆ Six Sigma Green Belt</span>
-      <span class="cert">◆ VSME / VLFM Certified</span>
-      <span class="cert">◆ TPM Level 1 &amp; 2</span>
-      <span class="cert">◆ National LSS Excellence Award · 2017</span>
+    <div class="facts">
+      <div><b class="num"><span data-count="110" data-pre="" data-suf="">110</span></b><span>people led across Cells 1, 2, 3 and 4WD</span></div>
+      <div><b class="num"><span data-count="150" data-pre="" data-suf="">150</span></b><span>Kaizens generated with operators and engineers</span></div>
+      <div><b class="num"><span data-count="5700" data-pre="" data-suf=" s" data-comma="1">5,700 s</span></b><span>cut from T4 offline assembly cycle time</span></div>
+      <div><b class="num">2017</b><span>National Lean Six Sigma Excellence Award</span></div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section id="contact" class="cta">
-  <div class="container">
-    <p class="cta-quote reveal">
-      "Engineering reliability is not just my profession <span class="accent">— it is my competitive advantage.</span>"
-    </p>
-    <div class="cta-buttons reveal">
-      <a class="btn btn-primary" href="mailto:harishinfo94@gmail.com">harishinfo94@gmail.com →</a>
+<section class="thesis" id="thesis">
+  <div class="wrap grid">
+    <div>
+      <div class="meta">Master’s thesis, University of Illinois Chicago, 2021</div>
+      <h2>Process Analysis of Breakage and Cracks in Pharmaceutical Vials Using DMAIC Problem Solving Methodology</h2>
+      <p>Glass vials that crack on a fill and finish line threaten sterility and stop production. I used the DMAIC method to find where and why vials break, starting with a statistical analysis of rejection rates from the empty-vial inspection machine across four vial sizes, from 50 ml to 500 ml.</p>
+      <div class="actions">
+        <a class="btn solid" href="https://indigo.uic.edu/articles/thesis/Process_Analysis_of_Breakage_and_Cracks_in_Pharmaceutical_Vials_Using_DMAIC_Problem_Solving_Methodology/15273951">Read the thesis at UIC</a>
+        <a class="btn" href="https://doi.org/10.25417/uic.15273951">DOI 10.25417/uic.15273951</a>
+      </div>
+    </div>
+    <ol class="dmaic" aria-label="The five DMAIC phases">
+      <li><b>D</b><span><strong>Define</strong> the breakage problem and its cost in downtime</span></li>
+      <li><b>M</b><span><strong>Measure</strong> rejection rates by vial size</span></li>
+      <li><b>A</b><span><strong>Analyse</strong> with SPC, hypothesis tests and ANOVA</span></li>
+      <li><b>I</b><span><strong>Improve</strong> the operations that cause breakage</span></li>
+      <li><b>C</b><span><strong>Control</strong> so the gains hold</span></li>
+    </ol>
+  </div>
+</section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <h2>Talk to me about reliability, maintenance and AI.</h2>
+    <div class="links">
+      <a class="btn solid" href="mailto:harishinfo94@gmail.com">harishinfo94@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/harish-ramdass-prabakaran-72205577/">LinkedIn</a>
       <a class="btn" href="tel:+13128682085">(312) 868-2085</a>
-      <a class="btn" href="https://www.linkedin.com/in/harish-ramdass-prabakaran-72205577/" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div>© 2026 · Harish Ramdass Prabakaran · Chicago, IL</div>
-    <div>Engineered with precision · Hosted on GitHub Pages</div>
+    <small>© 2026 Harish Ramdass Prabakaran, Chicago, IL</small>
   </div>
 </footer>
 
 <script>
-// === REVEAL ON SCROLL ===
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      io.unobserve(entry.target);
+(function(){
+  var c=document.getElementById('signal'), flag=document.getElementById('flag');
+  if(!c||!c.getContext) return;
+  var ctx=c.getContext('2d'), W=0, H=0, dpr=1;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CYCLE=14, SPEED=90; /* seconds per fault cycle, pixels per second */
+  function size(){dpr=Math.min(window.devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);}
+  /* fault severity 0..1 at time t: grows from 5s, peaks near 10.5s, repaired by 12s */
+  function sev(t){var u=((t%CYCLE)+CYCLE)%CYCLE;if(u<5)return 0;if(u<10.5)return Math.pow((u-5)/5.5,1.6);if(u<11.3)return 1-(u-10.5)/0.8;return 0;}
+  function sample(t){var s=sev(t);
+    var base=Math.sin(t*7.1)*0.16+Math.sin(t*13.7+1)*0.08+Math.sin(t*23.3)*0.04;
+    var imp=Math.pow(Math.max(0,Math.sin(t*9.5)),8)*Math.sin(t*61)*0.85*s;
+    return base*(1+s*0.8)+imp;}
+  function draw(now){
+    ctx.clearRect(0,0,W,H);
+    var mid=H/2, amp=H*0.42, i;
+    ctx.strokeStyle='rgba(255,255,255,.14)';ctx.lineWidth=1;
+    for(i=1;i<4;i++){ctx.beginPath();ctx.moveTo(0,H*i/4);ctx.lineTo(W,H*i/4);ctx.stroke();}
+    var flagX=null, prevHot=null, x, t, y, hot;
+    ctx.lineWidth=2;ctx.lineJoin='round';ctx.beginPath();
+    for(x=0;x<=W;x+=2){
+      t=now-(W-x)/SPEED; y=mid-sample(t)*amp; hot=sev(t)>0.22;
+      if(hot&&flagX===null) flagX=x;
+      if(prevHot===null){ctx.moveTo(x,y);}
+      else if(hot!==prevHot){ctx.lineTo(x,y);ctx.strokeStyle=prevHot?'#FC1921':'#E6E6E6';ctx.stroke();ctx.beginPath();ctx.moveTo(x,y);}
+      else ctx.lineTo(x,y);
+      prevHot=hot;
     }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
-
-// === COUNT-UP HERO STATS ===
-const counterIO = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.dataset.count, 10);
-      const suffix = el.dataset.suffix || '';
-      const duration = 1600;
-      const start = performance.now();
-      const easeOut = t => 1 - Math.pow(1 - t, 3);
-      function tick(now) {
-        const t = Math.min(1, (now - start) / duration);
-        const v = Math.floor(easeOut(t) * target);
-        el.textContent = v.toLocaleString() + suffix;
-        if (t < 1) requestAnimationFrame(tick);
-        else el.textContent = target.toLocaleString() + suffix;
-      }
-      requestAnimationFrame(tick);
-      counterIO.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => counterIO.observe(el));
-
-// === ANIMATE SKILL BARS ===
-const skillIO = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const fill = entry.target;
-      const v = fill.dataset.fill;
-      requestAnimationFrame(() => fill.style.width = v + '%');
-      skillIO.unobserve(fill);
-    }
-  });
-}, { threshold: 0.4 });
-document.querySelectorAll('.skill-bar-fill').forEach(el => skillIO.observe(el));
+    ctx.strokeStyle=prevHot?'#FC1921':'#E6E6E6';ctx.stroke();
+    if(flagX!==null&&flagX>60&&flagX<W-60){
+      ctx.strokeStyle='#FC1921';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(flagX,34);ctx.lineTo(flagX,H);ctx.stroke();ctx.setLineDash([]);
+      flag.style.left=flagX+'px';flag.classList.add('on');
+    } else flag.classList.remove('on');
+  }
+  function loop(ms){draw(ms/1000);requestAnimationFrame(loop);}
+  size();window.addEventListener('resize',function(){size();if(reduce)draw(12.2);});
+  if(reduce){draw(12.2);} else requestAnimationFrame(loop);
+})();
 </script>
-
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nums=[].slice.call(document.querySelectorAll('[data-count]'));
+  var meters=[].slice.call(document.querySelectorAll('.meter'));
+  if(reduce||!('IntersectionObserver' in window)) return;
+  function fmt(el,v){var d=+(el.getAttribute('data-dec')||0);var t=d?v.toFixed(d):(el.getAttribute('data-comma')?Math.round(v).toLocaleString('en-US'):String(Math.round(v)));el.textContent=el.getAttribute('data-pre')+t+el.getAttribute('data-suf');}
+  function run(el){var end=+el.getAttribute('data-count'),t0=null,dur=1400;
+    function step(ts){if(t0===null)t0=ts;var p=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-p,3);fmt(el,end*e);if(p<1)requestAnimationFrame(step);else fmt(el,end);}
+    fmt(el,0);requestAnimationFrame(step);}
+  meters.forEach(function(m){m.classList.add('wait');});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);
+    if(e.target.hasAttribute('data-count'))run(e.target);else e.target.classList.remove('wait');});},{threshold:0.4});
+  nums.concat(meters).forEach(function(el){io.observe(el);});
+})();
+</script>
 </body>
 </html>
